@@ -1,0 +1,609 @@
+/*!
+**  Author: Kale Chao | FakeCityMan
+**  Blog: kalechao87@github.io
+**/
+@import "normalize-reset", "compass/css3";
+
+/*
+ * Remove the gap between images and the bottom of their containers
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+* Hide visually and from screenreaders, but maintain layout
+*/
+
+.invisible {
+   visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+ Author's custom styles
+ ========================================================================== */
+ *,
+ *:after,
+ *:before {
+    @include box-sizing(border-box);
+    // -webkit-user-select:none;
+    // -webkit-touch-callout:none;
+ }
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+/* ==========================================================================
+ 定义变量
+ ========================================================================== */
+$main-bgcolor: #000;
+$main-color: #fff;
+$main-red: #c50000;
+$main-green: #83ac14;
+
+/* ==========================================================================
+定义变量结束
+========================================================================== */
+
+body {
+    font-family: 'Avenir Next', 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $main-bgcolor;
+    color: $main-bgcolor;
+    overflow: hidden;
+    font: {
+        size: 24px;
+    }
+}
+
+.ab-element {
+    position: absolute;
+}
+
+.block-img {
+    display: block;
+    max-width: 100%;
+}
+
+.ab-img {
+    position: absolute;
+}
+
+.ab-block-img {
+    display: block;
+    position: absolute;
+    max-width: 100%;
+}
+
+.hvcenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate3d(-50%, -50%, 0));
+}
+
+.hcenter {
+    position: absolute;
+    left: 50%;
+    @include transform(translate3d(-50%, 0, 0));
+}
+
+.vcenter {
+    position: absolute;
+    top: 50%;
+    @include transform(translate3d(0, -50%, 0));
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include background-size(cover);
+    overflow: hidden;
+}
+
+.scrolly-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+}
+
+#common-bg {
+    background-image: url('../images/universal-bg.jpg');
+}
+
+#loading-num {
+    position: absolute;
+    top: 50%;;
+    width: 100%;
+    z-index: 999;
+    text: {
+        align: center;
+    }
+    font: {
+        size: 56px;
+    }
+    color: #fff;
+}
+
+/*=================cover start=======================*/
+// cover sprite 设置
+$cover-layout:smart;
+$cover-spacing:10px;
+$cover-sprite-dimensions: true;
+@import "cover/*.png";
+@include  all-cover-sprites;
+
+#top-logo {
+    top: 36px;
+    left: 44px;
+}
+
+#main {
+    top: 236px;
+    left: 46px;
+    width: 593px;
+    height: 480px;
+    // background: rgba(255, 0, 0, 0.3);
+}
+
+#football {
+    top: 0;
+    left: 100px;
+}
+
+#cover-title {
+    top: 312px;
+    left: 35px;
+}
+
+#cover-pro {
+    top: 180px;
+    left: 0;
+}
+
+#horn {
+    top: 224px;
+    left: 254px;
+}
+
+#join-btn {
+    bottom: 164px;
+    left: 198px;
+}
+
+#rank-btn {
+  bottom: 72px;
+  left: 198px;
+}
+
+#rule-container {
+    top: 71px;
+    width: 525px;
+    // height: 871px;
+    background: #ffffff;
+    @include border-radius(6px);
+    margin: {
+        bottom: 24px;
+    }
+    padding: {
+        top: 28px;
+        right: 32px;
+        bottom: 24px;
+        left: 31px;
+    }
+
+    font: {
+        size: 21px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+}
+
+#rule-title {
+    position: relative;
+    width: 100%;
+    text: {
+        align: center;
+    }
+    font: {
+        size: 40px;
+        weight: 900;
+    }
+    margin: {
+        bottom: 18px;
+    }
+    color: $main-green;
+}
+
+#rule1, #rule2 {
+    margin: {
+        bottom: 12px !important;
+    }
+}
+
+.green-container {
+    position: relative;
+    border: 2px solid #009944;
+    @include border-radius(10px);
+    margin: {
+        top: 36px;
+    }
+    padding: {
+        top: 32px;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+    }
+}
+
+.rule-subtitle {
+    position: absolute;
+    top: -22px;
+    width: 177px;
+    height: 44px;
+    background: #fee900;
+    @include border-radius(22px);
+    text: {
+        align: center;
+    }
+    color: #4a6600;
+    font: {
+        size: 25px;
+    }
+    line-height: 44px;
+}
+
+// misc sprite 设置
+$misc-layout:smart;
+$misc-spacing:10px;
+$misc-sprite-dimensions: true;
+@import "misc/*.png";
+@include  all-misc-sprites;
+
+// music=======================================================================
+#music-control {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 58px;
+    height: 58px;
+    margin: 24px;
+    visibility: hidden;
+}
+
+#music-control-main {
+    position: absolute;
+    @extend .misc-music-bg;
+}
+
+.music-control-icon {
+    position: absolute;
+    @extend .misc-music-icon;
+    top: 50%;
+    left: 50%;
+    @include transform(translate3d(-50%, -50%, 0));
+}
+// music=======================================================================
+
+.normal-btn {
+    @extend .misc-normal-btn;
+    font: {
+        size: 32px;
+        weight: 600;
+    }
+    text: {
+        align: center;
+    }
+    line-height: 68px;
+    color: #2c4c0b;
+}
+
+.active-btn {
+    @extend .misc-active-btn;
+    font: {
+        size: 32px;
+        weight: 600;
+    }
+    text: {
+        align: center;
+    }
+    line-height: 68px;
+    color: #fff;
+}
+
+#start {
+    position: relative;
+    left: 50%;
+    margin: {
+        top: 28px;
+        bottom: 12px;
+        left: -126px;
+    }
+}
+
+#over-alert-container {
+    background: rgba(0, 0, 0, 0.88);
+}
+
+#over-alert {
+    top: 30%;
+}
+
+#close-over-alert {
+    top: -27px;
+    right: -27px;
+}
+
+.guess-group {
+    position: absolute;
+    left: 50%;
+    width: 511px;
+    height: 215px;
+    margin: {
+        left: -255px;
+    }
+    // background: rgba(255, 0, 0, 0.6);
+}
+
+#guess1 {
+    top: 64px;
+}
+
+.team-group {
+    position: absolute;
+    width: 163px;
+    height: 100%;
+    // background: rgba(255, 255, 0, 0.3);
+}
+
+.team-left {
+    top: 0;
+    left: 0;
+}
+
+.team-right {
+    top: 0;
+    right: 0;
+}
+
+.team-logo-container {
+    width: 163px;
+    height: 160px;
+    // background: rgba(0, 0, 0, 0.3);
+
+}
+
+.team-logo {
+    position: absolute;
+    display: block;
+    max-width: 100%;
+}
+
+.team-name {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font: {
+        size: 27px;
+        weight: 700;
+    }
+    text: {
+        align: center;
+    }
+    line-height: 160px;
+    color: #010101;
+}
+
+.vs-info-normal {
+    position: absolute;
+    left: 163px;
+    width: 185px;
+    height: 100%;
+    // background: rgba(0, 255, 0, 0.6);
+    color: #fff;
+    font: {
+        size: 24px;
+    }
+    text: {
+        align: center;
+    }
+}
+
+.vs-normal {
+    margin: {
+        top: 12px;
+        bottom: 12px;
+    }
+    font: {
+        size: 43px;
+        weight: 700;
+    }
+}
+
+.guess-btn-normal {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    @include transform(translate3d(-50%, 0, 0));
+    @extend .misc-small-normal-btn;
+    font: {
+        size: 25px;
+    }
+    text: {
+        align: center;
+    }
+    line-height: 49px;
+}
+
+.guess-btn-active {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    @include transform(translate3d(-50%, 0, 0));
+    @extend .misc-small-active-btn;
+    font: {
+        size: 25px;
+    }
+    text: {
+        align: center;
+    }
+    line-height: 49px;
+}
+
+#guess2 {
+    top: 333px;
+}
+
+#guess3 {
+    top: 609px;
+}
+
+#confirm-three {
+    position: absolute;
+    top: 871px;
+    left: 50%;
+    margin: {
+        bottom: 12px;
+        left: -126px;
+    }
+}
+
+.guess-one-group {
+    top: 210px;
+    width: 561px;
+    height: 404px;
+    // background: rgba(255, 0, 0, 0.3);
+}
+
+.team-group-large {
+    position: absolute;
+    width: 196px;
+    height: 100%;
+    // background: rgba(0, 255, 0, 0.4);
+}
+
+.team-name-large {
+    width: 100%;
+    text: {
+        align: center;
+    }
+    color: #000;
+    font: {
+        size: 36px;
+        weight: 600;
+    }
+}
+
+.team-logo-container-large {
+    position: absolute;
+    top: 83px;
+    left: 50%;
+    @include transform(translate3d(-50%, 0, 0));
+    width: 188px;
+    height: 184px;
+    // background: rgba(255, 255, 0, 0.3);
+}
+
+.medium-btn-normal {
+    @extend .misc-medium-normal-btn;
+    font: {
+        size: 33px;
+    }
+    color: #041407;
+    text: {
+        align: center;
+    }
+    line-height: 63px;
+}
+
+.medium-btn-active {
+    @extend .misc-medium-active-btn;
+    font: {
+        size: 33px;
+    }
+    color: #041407;
+    text: {
+        align: center;
+    }
+    line-height: 63px;
+}
+
+.guess-one-btn {
+    position: absolute;
+    bottom: 0;
+}
+
+.vs-info-large {
+    position: absolute;
+    left: 190px;
+    width: 180px;
+    height: 100%;
+    // background: rgba(0, 255, 0, 0.6);
+    color: #fff;
+    font: {
+        size: 24px;
+    }
+    text: {
+        align: center;
+    }
+}
+
+.vs-large {
+    margin: {
+        top: 128px;
+        bottom: 12px;
+    }
+    font: {
+        size: 49px;
+        weight: 700;
+    }
+}
+
+#confirm-one {
+    position: absolute;
+    top: 700px;
+    left: 50%;
+    margin: {
+        bottom: 12px;
+        left: -126px;
+    }
+}
+
+#cover, #rule, #over-alert-container, #guess-three, #guess-one {
+    display: none;
+}
