@@ -536,6 +536,12 @@ body {
   background-image: url("../images/confirm.png");
 }
 
+#game-bg {
+  width: 640px;
+  height: 1043px;
+  background-image: url("../images/game-bg.jpg");
+}
+
 #rank-container, #rule-container, #no-face-container {
   visibility: hidden;
 }

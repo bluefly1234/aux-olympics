@@ -336,6 +336,14 @@ body {
     background-image: url($confirm);
 }
 
+// game start==============================================
+#game-bg {
+    $game-bg: '../images/game-bg.jpg';
+    width: image-width($game-bg);
+    height: image-height($game-bg);
+    background-image: url($game-bg);
+}
+
 #rank-container, #rule-container, #no-face-container {
     visibility: hidden;
 }
