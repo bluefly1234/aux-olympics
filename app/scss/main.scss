@@ -293,6 +293,31 @@ body {
     background-image: url($close-rank);
 }
 
-#rank-container {
+#rule-container {
+    background-image: url('../images/universal-bg.jpg');
+}
+
+#rule {
+    top: 62px;
+    left: 75px;
+    margin: {
+        bottom: 60px;
+    }
+    $rule: '../images/rule.png';
+    width: image-width($rule);
+    height: image-height($rule);
+    background-image: url($rule);
+}
+
+#rule-start {
+    top: 2085px;
+    left: 125px;
+    $rule-start: '../images/rule-start.png';
+    width: image-width($rule-start);
+    height: image-height($rule-start);
+    background-image: url($rule-start);
+}
+
+#rank-container, #rule-container {
     visibility: hidden;
 }

@@ -499,7 +499,28 @@ body {
   background-image: url("../images/close-rank.png");
 }
 
-#rank-container {
+#rule-container {
+  background-image: url("../images/universal-bg.jpg");
+}
+
+#rule {
+  top: 62px;
+  left: 75px;
+  margin-bottom: 60px;
+  width: 495px;
+  height: 2299px;
+  background-image: url("../images/rule.png");
+}
+
+#rule-start {
+  top: 2085px;
+  left: 125px;
+  width: 187px;
+  height: 187px;
+  background-image: url("../images/rule-start.png");
+}
+
+#rank-container, #rule-container {
   visibility: hidden;
 }
 
