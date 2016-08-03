@@ -202,7 +202,7 @@ body {
 }
 
 // rank start=============================================
-#rank-container {
+#rank-container, #no-face-container {
     background: rgba(0, 0, 0, 0.8);
 }
 
@@ -318,6 +318,24 @@ body {
     background-image: url($rule-start);
 }
 
-#rank-container, #rule-container {
+#no-face {
+    top: 356px;
+    left: 75px;
+    $no-face: '../images/no-face.png';
+    width: image-width($no-face);
+    height: image-height($no-face);
+    background-image: url($no-face);
+}
+
+#no-face-confirm {
+    top: 163px;
+    left: 152px;
+    $confirm: '../images/confirm.png';
+    width: image-width($confirm);
+    height: image-height($confirm);
+    background-image: url($confirm);
+}
+
+#rank-container, #rule-container, #no-face-container {
     visibility: hidden;
 }

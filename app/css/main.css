@@ -420,7 +420,7 @@ body {
   background-image: url("../images/rank-btn.png");
 }
 
-#rank-container {
+#rank-container, #no-face-container {
   background: rgba(0, 0, 0, 0.8);
 }
 
@@ -520,7 +520,23 @@ body {
   background-image: url("../images/rule-start.png");
 }
 
-#rank-container, #rule-container {
+#no-face {
+  top: 356px;
+  left: 75px;
+  width: 495px;
+  height: 268px;
+  background-image: url("../images/no-face.png");
+}
+
+#no-face-confirm {
+  top: 163px;
+  left: 152px;
+  width: 191px;
+  height: 76px;
+  background-image: url("../images/confirm.png");
+}
+
+#rank-container, #rule-container, #no-face-container {
   visibility: hidden;
 }
 
