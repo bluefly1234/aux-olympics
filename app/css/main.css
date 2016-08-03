@@ -542,6 +542,61 @@ body {
   background-image: url("../images/game-bg.jpg");
 }
 
+#collection {
+  top: 11px;
+  left: 33px;
+  width: 545px;
+  height: 166px;
+  background-image: url("../images/collection.png");
+}
+
+.collection-gold {
+  position: absolute;
+  top: 93px;
+  width: 53px;
+  height: 53px;
+  background-image: url("../images/gold.png");
+}
+
+#gold1 {
+  left: 19px;
+}
+
+#gold2 {
+  left: 84px;
+}
+
+#gold3 {
+  left: 147px;
+}
+
+#gold4 {
+  left: 212px;
+}
+
+#gold5 {
+  left: 276px;
+}
+
+#collection-sum {
+  top: 83px;
+  left: 405px;
+  width: 198px;
+  height: 94px;
+  background-image: url("../images/sum.png");
+}
+
+#collection-num {
+  top: 3px;
+  left: 101px;
+  width: 92px;
+  height: 84px;
+  color: #774c29;
+  font-size: 48px;
+  text-align: center;
+  line-height: 84px;
+}
+
 #rank-container, #rule-container, #no-face-container {
   visibility: hidden;
 }

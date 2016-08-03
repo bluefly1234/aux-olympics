@@ -63,6 +63,7 @@ $main-bgcolor: #000;
 $main-color: #fff;
 $main-red: #c50000;
 $main-green: #83ac14;
+$main-brown: #774c29;
 
 /* ==========================================================================
 定义变量结束
@@ -342,6 +343,68 @@ body {
     width: image-width($game-bg);
     height: image-height($game-bg);
     background-image: url($game-bg);
+}
+
+#collection {
+    top: 11px;
+    left: 33px;
+    $collection: '../images/collection.png';
+    width: image-width($collection);
+    height: image-height($collection);
+    background-image: url($collection);
+}
+
+.collection-gold {
+    position: absolute;
+    top: 93px;
+    $gold: '../images/gold.png';
+    width: image-width($gold);
+    height: image-height($gold);
+    background-image: url($gold);
+}
+
+#gold1 {
+    left: 19px;
+}
+
+#gold2 {
+    left: 84px;
+}
+
+#gold3 {
+    left: 147px;
+}
+
+#gold4 {
+    left: 212px;
+}
+
+#gold5 {
+    left: 276px;
+}
+
+#collection-sum {
+    top: 83px;
+    left: 405px;
+    $sum: '../images/sum.png';
+    width: image-width($sum);
+    height: image-height($sum);
+    background-image: url($sum);
+}
+
+#collection-num {
+    top: 3px;
+    left: 101px;
+    width: 92px;
+    height: 84px;
+    color: $main-brown;
+    font: {
+        size: 48px;
+    }
+    text: {
+        align: center;
+    }
+    line-height: 84px;
 }
 
 #rank-container, #rule-container, #no-face-container {
