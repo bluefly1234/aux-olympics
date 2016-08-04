@@ -928,7 +928,38 @@ body {
   left: 108px;
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container {
+#balls-container {
+  top: 542px;
+  left: 37px;
+  width: 561px;
+  height: 501px;
+}
+
+#hand {
+  top: 238px;
+  left: 107px;
+  width: 345px;
+  height: 263px;
+  background-image: url("../images/hand.png");
+}
+
+#basketball {
+  top: 0;
+  left: 0;
+  width: 237px;
+  height: 237px;
+  background-image: url("../images/basketball.png");
+}
+
+#football {
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 240px;
+  background-image: url("../images/football.png");
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container {
   visibility: hidden;
 }
 
