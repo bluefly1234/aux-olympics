@@ -631,7 +631,7 @@ $dialouge: '../images/dialouge-bg.png';
     background-image: url($glass);
 }
 
-#bomb-dialouge-content {
+#bomb-dialouge-content, #mic-dialouge-content {
     top: 20px;
 }
 
@@ -747,6 +747,58 @@ $bomb-sprite-dimensions: true;
     background-image: url($cheerr);
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container {
+#mics {
+    top: 586px;
+    left: 0;
+    width: 640px;
+    height: 457px;
+}
+
+#mic1 {
+    top: 6px;
+    left: 0;
+    $mic1: '../images/mic1.png';
+    width: image-width($mic1);
+    height: image-height($mic1);
+    background-image: url($mic1);
+}
+
+#mic2 {
+    top: 0px;
+    left: 6px;
+    $mic2: '../images/mic2.png';
+    width: image-width($mic2);
+    height: image-height($mic2);
+    background-image: url($mic2);
+}
+
+#mic3 {
+    top: 56px;
+    left: 265px;
+    $mic3: '../images/mic3.png';
+    width: image-width($mic3);
+    height: image-height($mic3);
+    background-image: url($mic3);
+}
+
+#mic4 {
+    top: 8px;
+    left: 392px;
+    $mic4: '../images/mic4.png';
+    width: image-width($mic4);
+    height: image-height($mic4);
+    background-image: url($mic4);
+}
+
+#mic5 {
+    top: 20px;
+    left: 457px;
+    $mic5: '../images/mic5.png';
+    width: image-width($mic5);
+    height: image-height($mic5);
+    background-image: url($mic5);
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container {
     visibility: hidden;
 }

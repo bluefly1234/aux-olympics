@@ -812,7 +812,7 @@ body {
   background-image: url("../images/glass.png");
 }
 
-#bomb-dialouge-content {
+#bomb-dialouge-content, #mic-dialouge-content {
   top: 20px;
 }
 
@@ -975,7 +975,54 @@ body {
   background-image: url("../images/cheerr.png");
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container {
+#mics {
+  top: 586px;
+  left: 0;
+  width: 640px;
+  height: 457px;
+}
+
+#mic1 {
+  top: 6px;
+  left: 0;
+  width: 186px;
+  height: 451px;
+  background-image: url("../images/mic1.png");
+}
+
+#mic2 {
+  top: 0px;
+  left: 6px;
+  width: 302px;
+  height: 457px;
+  background-image: url("../images/mic2.png");
+}
+
+#mic3 {
+  top: 56px;
+  left: 265px;
+  width: 149px;
+  height: 401px;
+  background-image: url("../images/mic3.png");
+}
+
+#mic4 {
+  top: 8px;
+  left: 392px;
+  width: 142px;
+  height: 449px;
+  background-image: url("../images/mic4.png");
+}
+
+#mic5 {
+  top: 20px;
+  left: 457px;
+  width: 183px;
+  height: 434px;
+  background-image: url("../images/mic5.png");
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container {
   visibility: hidden;
 }
 
