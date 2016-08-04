@@ -646,6 +646,17 @@ body {
   background-image: url("../images/gift-box.png");
 }
 
+.light {
+  position: absolute;
+  width: 640px;
+  height: 932px;
+  background-image: url("../images/light.png");
+}
+
+#gift-light {
+  top: 109px;
+}
+
 .trans-container {
   background: rgba(0, 0, 0, 0.8);
 }
@@ -777,7 +788,15 @@ body {
   right: -21px;
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container {
+#yaling {
+  top: 576px;
+  left: 0;
+  width: 441px;
+  height: 467px;
+  background-image: url("../images/yaling.png");
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container {
   visibility: hidden;
 }
 

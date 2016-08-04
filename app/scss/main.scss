@@ -462,6 +462,18 @@ $dialouge: '../images/dialouge-bg.png';
     background-image: url($gift-box);
 }
 
+.light {
+    position: absolute;
+    $light: '../images/light.png';
+    width: image-width($light);
+    height: image-height($light);
+    background-image: url($light);
+}
+
+#gift-light {
+    top: 109px;
+}
+
 .trans-container {
     background: rgba(0, 0, 0, 0.8);
 }
@@ -592,6 +604,15 @@ $dialouge: '../images/dialouge-bg.png';
     right: -21px;
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container {
+#yaling {
+    top: 576px;
+    left: 0;
+    $yaling: '../images/yaling.png';
+    width: image-width($yaling);
+    height: image-height($yaling);
+    background-image: url($yaling);
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container {
     visibility: hidden;
 }
