@@ -533,6 +533,65 @@ $dialouge: '../images/dialouge-bg.png';
     background-image: url($go-lottery);
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container {
+#gift-info {
+    top: 180px;
+    left: 43px;
+    $gift-info: '../images/gift-info.png';
+    width: image-width($gift-info);
+    height: image-height($gift-info);
+    background-image: url($gift-info);
+}
+
+#gift-item-content {
+    top: 200px;
+    left: 227px;
+    width: 250px;
+    font: {
+        size: 26px;
+        weight: 700;
+    }
+}
+
+#gift-confirm {
+    top: 520px;
+    left: 166px;
+    $gift-confirm: '../images/gift-confirm.png';
+    width: image-width($gift-confirm);
+    height: image-height($gift-confirm);
+    background-image: url($gift-confirm);
+}
+
+.input-elements {
+    position: absolute;
+    left: 150px;
+    width: 334px;
+    height: 48px;
+    line-height: 48px;
+    padding: {
+        left: 12px;
+    }
+    color: #000000;
+    border: none;
+    // background: rgba(0, 0, 0, 0.3);
+}
+
+#name {
+    top: 300px;
+}
+
+#phone {
+    top: 363px;
+}
+
+#address {
+    top: 426px;
+}
+
+#close-gift-info {
+    top: 61px;
+    right: -21px;
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container {
     visibility: hidden;
 }

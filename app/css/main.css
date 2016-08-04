@@ -725,7 +725,59 @@ body {
   background-image: url("../images/go-lottery.png");
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container {
+#gift-info {
+  top: 180px;
+  left: 43px;
+  width: 527px;
+  height: 668px;
+  background-image: url("../images/gift-info.png");
+}
+
+#gift-item-content {
+  top: 200px;
+  left: 227px;
+  width: 250px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+#gift-confirm {
+  top: 520px;
+  left: 166px;
+  width: 225px;
+  height: 94px;
+  background-image: url("../images/gift-confirm.png");
+}
+
+.input-elements {
+  position: absolute;
+  left: 150px;
+  width: 334px;
+  height: 48px;
+  line-height: 48px;
+  padding-left: 12px;
+  color: #000000;
+  border: none;
+}
+
+#name {
+  top: 300px;
+}
+
+#phone {
+  top: 363px;
+}
+
+#address {
+  top: 426px;
+}
+
+#close-gift-info {
+  top: 61px;
+  right: -21px;
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container {
   visibility: hidden;
 }
 
