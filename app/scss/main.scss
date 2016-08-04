@@ -74,7 +74,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: $main-bgcolor;
-    color: $main-bgcolor;
+    color: $main-color;
     overflow: hidden;
     font: {
         size: 24px;
@@ -288,10 +288,14 @@ body {
 #close-rank {
     top: 106px;
     right: 0;
-    $close-rank: '../images/close-rank.png';
-    width: image-width($close-rank);
-    height: image-height($close-rank);
-    background-image: url($close-rank);
+}
+
+.close-btn {
+    position: absolute;
+    $close-btn: '../images/close-btn.png';
+    width: image-width($close-btn);
+    height: image-height($close-btn);
+    background-image: url($close-btn);
 }
 
 #rule-container {
@@ -458,6 +462,77 @@ $dialouge: '../images/dialouge-bg.png';
     background-image: url($gift-box);
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container {
+.trans-container {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#limit-alert {
+    top: 373px;
+    left: 79px;
+    width: 466px;
+    height: 264px;
+    border: 3px solid #ffffff;
+    @include border-radius(30px);
+    @include background-image(linear-gradient(#0f9839, #007539));
+    @include box-shadow(rgba(0, 0, 0, 0.72) 8px 8px 16px);
+}
+
+#close-limit-alert {
+    top: -15px;
+    right: -9px;
+}
+
+#limit-content {
+    top: 88px;
+    width: 100%;
+    font: {
+        size: 28px;
+    }
+    padding: {
+        left: 80px;
+    }
+}
+
+#go-lottery-alert {
+    top: 252px;
+    left: 79px;
+    width: 466px;
+    height: 507px;
+    border: 3px solid #ffffff;
+    @include border-radius(30px);
+    @include background-image(linear-gradient(#0f9839, #007539));
+    @include box-shadow(rgba(0, 0, 0, 0.72) 8px 8px 16px);
+}
+
+#smile {
+    top: 48px;
+    left: 138px;
+    $smile: '../images/smile.png';
+    width: image-width($smile);
+    height: image-height($smile);
+    background-image: url($smile);
+}
+
+#go-lottery-content {
+    top: 280px;
+    width: 100%;
+    padding: {
+        left: 90px;
+    }
+    font: {
+        size: 28px;
+    }
+}
+
+#go-lottery {
+    top: 367px;
+    left: 98px;
+    $go-lottery: '../images/go-lottery.png';
+    width: image-width($go-lottery);
+    height: image-height($go-lottery);
+    background-image: url($go-lottery);
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container {
     visibility: hidden;
 }
