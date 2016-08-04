@@ -804,7 +804,131 @@ body {
   background-image: url("../images/neck-gold.png");
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container {
+#glass {
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 1043px;
+  background-image: url("../images/glass.png");
+}
+
+#bomb-dialouge-content {
+  top: 20px;
+}
+
+/*=================bomb start=======================*/
+.bomb-sprite, .bomb-blow1, .bomb-blow2, .bomb-blow3, .bomb-blow4, .bomb-blow5, .bomb-blow6, .bomb-blow7, .bomb-blow8, .bomb-bomb {
+  background-image: url('../images/bomb-s9ff2090ab4.png');
+  background-repeat: no-repeat;
+}
+
+.bomb-blow1 {
+  background-position: -134px -108px;
+  height: 70px;
+  width: 49px;
+}
+
+.bomb-blow2 {
+  background-position: 0 -221px;
+  height: 114px;
+  width: 101px;
+}
+
+.bomb-blow3 {
+  background-position: 0 -653px;
+  height: 170px;
+  width: 171px;
+}
+
+.bomb-blow4 {
+  background-position: 0 -1019px;
+  height: 197px;
+  width: 187px;
+}
+
+.bomb-blow5 {
+  background-position: 0 -823px;
+  height: 196px;
+  width: 182px;
+}
+
+.bomb-blow6 {
+  background-position: 0 -335px;
+  height: 155px;
+  width: 164px;
+}
+
+.bomb-blow7 {
+  background-position: 0 -108px;
+  height: 113px;
+  width: 134px;
+}
+
+.bomb-blow8 {
+  background-position: 0 0;
+  height: 108px;
+  width: 134px;
+}
+
+.bomb-bomb {
+  background-position: 0 -490px;
+  height: 163px;
+  width: 166px;
+}
+
+#bomb-blow-container {
+  top: 550px;
+  left: 237px;
+  width: 271px;
+  height: 248px;
+}
+
+#bomb {
+  top: 85px;
+  left: 0;
+}
+
+#bomb-blow1 {
+  top: 54px;
+  left: 145px;
+}
+
+#bomb-blow2 {
+  top: 47px;
+  left: 113px;
+}
+
+#bomb-blow3 {
+  top: 14px;
+  left: 84px;
+}
+
+#bomb-blow4 {
+  top: 0px;
+  left: 84px;
+}
+
+#bomb-blow5 {
+  top: 14px;
+  left: 79px;
+}
+
+#bomb-blow6 {
+  top: 42px;
+  left: 95px;
+}
+
+#bomb-blow7 {
+  top: 54px;
+  left: 103px;
+}
+
+#bomb-blow8 {
+  top: 57px;
+  left: 108px;
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container {
   visibility: hidden;
 }
 

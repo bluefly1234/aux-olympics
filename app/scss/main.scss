@@ -622,6 +622,79 @@ $dialouge: '../images/dialouge-bg.png';
     background-image: url($neck-gold);
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container {
+#glass {
+    top: 0;
+    left: 0;
+    $glass: '../images/glass.png';
+    width: image-width($glass);
+    height: image-height($glass);
+    background-image: url($glass);
+}
+
+#bomb-dialouge-content {
+    top: 20px;
+}
+
+/*=================bomb start=======================*/
+// bomb sprite 设置
+$bomb-layout:smart;
+$bomb-spacing:10px;
+$bomb-sprite-dimensions: true;
+@import "bomb/*.png";
+@include  all-bomb-sprites;
+
+#bomb-blow-container {
+    top: 550px;
+    left: 237px;
+    width: 271px;
+    height: 248px;
+}
+
+#bomb {
+    top: 85px;
+    left: 0;
+}
+
+#bomb-blow1 {
+    top: 54px;
+    left: 145px;
+}
+
+#bomb-blow2 {
+    top: 47px;
+    left: 113px;
+}
+
+#bomb-blow3 {
+    top: 14px;
+    left: 84px;
+}
+
+#bomb-blow4 {
+    top: 0px;
+    left: 84px;
+}
+
+#bomb-blow5 {
+    top: 14px;
+    left: 79px;
+}
+
+#bomb-blow6 {
+    top: 42px;
+    left: 95px;
+}
+
+#bomb-blow7 {
+    top: 54px;
+    left: 103px;
+}
+
+#bomb-blow8 {
+    top: 57px;
+    left: 108px;
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container {
     visibility: hidden;
 }
