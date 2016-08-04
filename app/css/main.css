@@ -959,7 +959,23 @@ body {
   background-image: url("../images/football.png");
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container {
+#cheerl {
+  top: 567px;
+  left: -22px;
+  width: 317px;
+  height: 476px;
+  background-image: url("../images/cheerl.png");
+}
+
+#cheerr {
+  top: 573px;
+  left: 347px;
+  width: 316px;
+  height: 470px;
+  background-image: url("../images/cheerr.png");
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container {
   visibility: hidden;
 }
 

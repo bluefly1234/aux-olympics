@@ -729,6 +729,24 @@ $bomb-sprite-dimensions: true;
     background-image: url($football);
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container {
+#cheerl {
+    top: 567px;
+    left: -22px;
+    $cheerl: '../images/cheerl.png';
+    width: image-width($cheerl);
+    height: image-height($cheerl);
+    background-image: url($cheerl);
+}
+
+#cheerr {
+    top: 573px;
+    left: 347px;
+    $cheerr: '../images/cheerr.png';
+    width: image-width($cheerr);
+    height: image-height($cheerr);
+    background-image: url($cheerr);
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container {
     visibility: hidden;
 }
