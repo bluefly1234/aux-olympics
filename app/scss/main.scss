@@ -407,6 +407,57 @@ body {
     line-height: 84px;
 }
 
-#rank-container, #rule-container, #no-face-container {
+$dialouge: '../images/dialouge-bg.png';
+.dialouge {
+    position: absolute;
+    top: 855px;
+    left: 41px;
+    width: image-width($dialouge);
+    height: image-height($dialouge);
+    background-image: url($dialouge);
+}
+
+.front-dialouge {
+    position: absolute;
+    top: 855px;
+    left: 41px;
+    width: image-width($dialouge);
+    height: image-height($dialouge);
+    // background: rgba(255, 0, 0, 0.4);
+}
+
+.ok-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    $ok-btn: '../images/ok-btn.png';
+    width: image-width($ok-btn);
+    height: image-height($ok-btn);
+    background-image: url($ok-btn);
+}
+
+.dialouge-content {
+    position: absolute;
+    top: 41px;
+    left: 38px;
+    width: 376px;
+    height: 108px;
+    font: {
+        size: 28px;
+    }
+    color: #ffffff;
+    @include text-shadow(2px 2px 1px rgba(0, 0, 0, 0.6));
+}
+
+#gift-box {
+    top: 630px;
+    left: 203px;
+    $gift-box: '../images/gift-box.png';
+    width: image-width($gift-box);
+    height: image-height($gift-box);
+    background-image: url($gift-box);
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container {
     visibility: hidden;
 }

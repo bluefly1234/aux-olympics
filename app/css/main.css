@@ -597,7 +597,52 @@ body {
   line-height: 84px;
 }
 
-#rank-container, #rule-container, #no-face-container {
+.dialouge {
+  position: absolute;
+  top: 855px;
+  left: 41px;
+  width: 559px;
+  height: 154px;
+  background-image: url("../images/dialouge-bg.png");
+}
+
+.front-dialouge {
+  position: absolute;
+  top: 855px;
+  left: 41px;
+  width: 559px;
+  height: 154px;
+}
+
+.ok-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 141px;
+  height: 141px;
+  background-image: url("../images/ok-btn.png");
+}
+
+.dialouge-content {
+  position: absolute;
+  top: 41px;
+  left: 38px;
+  width: 376px;
+  height: 108px;
+  font-size: 28px;
+  color: #ffffff;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.6);
+}
+
+#gift-box {
+  top: 630px;
+  left: 203px;
+  width: 275px;
+  height: 255px;
+  background-image: url("../images/gift-box.png");
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container {
   visibility: hidden;
 }
 
