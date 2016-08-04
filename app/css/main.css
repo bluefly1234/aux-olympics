@@ -540,10 +540,14 @@ body {
   background-image: url("../images/confirm.png");
 }
 
-#game-bg {
+#game-container {
+  background: #dbae00;
+}
+
+#photo-mask {
   width: 640px;
   height: 1043px;
-  background-image: url("../images/game-bg.jpg");
+  background-image: url("../images/photo-mask.png");
 }
 
 #collection {
@@ -1022,7 +1026,108 @@ body {
   background-image: url("../images/mic5.png");
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container {
+#clouds {
+  top: 561px;
+  left: 96px;
+  width: 424px;
+  height: 482px;
+}
+
+/*=================cloud start=======================*/
+.cloud-sprite, .cloud-cloud1, .cloud-cloud2, .cloud-cloud3, .cloud-cloud4, .cloud-cloud5, .cloud-cloud6, .cloud-cloud7, .cloud-cloud8 {
+  background-image: url('../images/cloud-s3586662290.png');
+  background-repeat: no-repeat;
+}
+
+.cloud-cloud1 {
+  background-position: 0 0;
+  height: 162px;
+  width: 139px;
+}
+
+.cloud-cloud2 {
+  background-position: 0 -162px;
+  height: 334px;
+  width: 253px;
+}
+
+.cloud-cloud3 {
+  background-position: 0 -1939px;
+  height: 449px;
+  width: 340px;
+}
+
+.cloud-cloud4 {
+  background-position: 0 -2388px;
+  height: 481px;
+  width: 389px;
+}
+
+.cloud-cloud5 {
+  background-position: 0 -1564px;
+  height: 375px;
+  width: 371px;
+}
+
+.cloud-cloud6 {
+  background-position: 0 -1197px;
+  height: 367px;
+  width: 374px;
+}
+
+.cloud-cloud7 {
+  background-position: 0 -842px;
+  height: 355px;
+  width: 365px;
+}
+
+.cloud-cloud8 {
+  background-position: 0 -496px;
+  height: 346px;
+  width: 354px;
+}
+
+#cloud1 {
+  top: 123px;
+  left: 122px;
+}
+
+#cloud2 {
+  top: 46px;
+  left: 66px;
+}
+
+#cloud3 {
+  top: 0;
+  left: 21px;
+}
+
+#cloud4 {
+  top: 1px;
+  left: 0;
+}
+
+#cloud5 {
+  top: 35px;
+  left: 32px;
+}
+
+#cloud6 {
+  top: 44px;
+  left: 50px;
+}
+
+#cloud7 {
+  top: 47px;
+  left: 32px;
+}
+
+#cloud8 {
+  top: 55px;
+  left: 37px;
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container, .cloud {
   visibility: hidden;
 }
 

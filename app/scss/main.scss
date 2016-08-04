@@ -342,11 +342,22 @@ body {
 }
 
 // game start==============================================
-#game-bg {
-    $game-bg: '../images/game-bg.jpg';
-    width: image-width($game-bg);
-    height: image-height($game-bg);
-    background-image: url($game-bg);
+#game-container {
+    background: #dbae00;
+}
+
+// #game-bg {
+//     $game-bg: '../images/game-bg.jpg';
+//     width: image-width($game-bg);
+//     height: image-height($game-bg);
+//     background-image: url($game-bg);
+// }
+
+#photo-mask {
+    $photo-mask: '../images/photo-mask.png';
+    width: image-width($photo-mask);
+    height: image-height($photo-mask);
+    background-image: url($photo-mask);
 }
 
 #collection {
@@ -799,6 +810,61 @@ $bomb-sprite-dimensions: true;
     background-image: url($mic5);
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container {
+#clouds {
+    top: 561px;
+    left: 96px;
+    width: 424px;
+    height: 482px;
+}
+
+/*=================cloud start=======================*/
+// cloud sprite 设置
+$cloud-layout:smart;
+$cloud-spacing:10px;
+$cloud-sprite-dimensions: true;
+@import "cloud/*.png";
+@include  all-cloud-sprites;
+
+#cloud1 {
+    top: 123px;
+    left: 122px;
+}
+
+#cloud2 {
+    top: 46px;
+    left: 66px;
+}
+
+#cloud3 {
+    top: 0;
+    left: 21px;
+}
+
+#cloud4 {
+    top: 1px;
+    left: 0;
+}
+
+#cloud5 {
+    top: 35px;
+    left: 32px;
+}
+
+#cloud6 {
+    top: 44px;
+    left: 50px;
+}
+
+#cloud7 {
+    top: 47px;
+    left: 32px;
+}
+
+#cloud8 {
+    top: 55px;
+    left: 37px;
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container, .cloud {
     visibility: hidden;
 }
