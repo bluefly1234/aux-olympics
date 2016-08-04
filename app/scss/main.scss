@@ -470,7 +470,7 @@ $dialouge: '../images/dialouge-bg.png';
     background-image: url($light);
 }
 
-#gift-light {
+#gift-light, #gold-light {
     top: 109px;
 }
 
@@ -613,6 +613,15 @@ $dialouge: '../images/dialouge-bg.png';
     background-image: url($yaling);
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container {
+#neck-gold {
+    top: 679px;
+    left: 190px;
+    $neck-gold: '../images/neck-gold.png';
+    width: image-width($neck-gold);
+    height: image-height($neck-gold);
+    background-image: url($neck-gold);
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container {
     visibility: hidden;
 }

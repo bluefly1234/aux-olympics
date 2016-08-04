@@ -653,7 +653,7 @@ body {
   background-image: url("../images/light.png");
 }
 
-#gift-light {
+#gift-light, #gold-light {
   top: 109px;
 }
 
@@ -796,7 +796,15 @@ body {
   background-image: url("../images/yaling.png");
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container {
+#neck-gold {
+  top: 679px;
+  left: 190px;
+  width: 302px;
+  height: 186px;
+  background-image: url("../images/neck-gold.png");
+}
+
+#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container {
   visibility: hidden;
 }
 
