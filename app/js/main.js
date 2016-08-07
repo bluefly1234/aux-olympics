@@ -513,8 +513,8 @@ function determineShowWhich() {
 
 
     // showOpenGift(); // 显示拆礼物
-    // showYL(); // 显示哑铃界面
-    showJP(); // 显示金牌界面
+    showYL(); // 显示哑铃界面
+    // showJP(); // 显示金牌界面
 }
 
 function restartGame() {
