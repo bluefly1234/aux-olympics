@@ -62,7 +62,7 @@ html, body {
 $main-bgcolor: #000;
 $main-color: #fff;
 $main-red: #c50000;
-$main-green: #83ac14;
+$main-green: #80b700;
 $main-brown: #774c29;
 
 /* ==========================================================================
@@ -73,7 +73,7 @@ body {
     font-family: 'Avenir Next', 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: $main-bgcolor;
+    background: $main-green;
     color: $main-color;
     overflow: hidden;
     font: {
@@ -140,12 +140,25 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+#loading-num {
+    position: relative;
+    top: 50%;
+    width: 100%;
+    text: {
+        align: center;
+    }
+    font: {
+        size: 56px
+    }
+    z-index: 100;
+}
+
 // cover ==================================================================
 #cover-bg {
     $cover-bg: '../images/cover-bg.jpg';
     width: image-width($cover-bg);
     height: image-height($cover-bg);
-    background-image: url($cover-bg);
+    // background-image: url($cover-bg);
 }
 
 #main-theme {
@@ -154,7 +167,7 @@ body {
     $main-theme: '../images/main-theme.png';
     width: image-width($main-theme);
     height: image-height($main-theme);
-    background-image: url($main-theme);
+    // background-image: url($main-theme);
 }
 
 #woman {
@@ -163,7 +176,7 @@ body {
     $woman: '../images/woman.png';
     width: image-width($woman);
     height: image-height($woman);
-    background-image: url($woman);
+    // background-image: url($woman);
 }
 
 #flash {
@@ -172,7 +185,7 @@ body {
     $flash: '../images/flash.png';
     width: image-width($flash);
     height: image-height($flash);
-    background-image: url($flash);
+    // background-image: url($flash);
 }
 
 #xiaoao {
@@ -181,7 +194,7 @@ body {
     $xiaoao: '../images/xiaoao.png';
     width: image-width($xiaoao);
     height: image-height($xiaoao);
-    background-image: url($xiaoao);
+    // background-image: url($xiaoao);
 }
 
 #cover-start {
@@ -190,7 +203,7 @@ body {
     $cover-start: '../images/cover-start.png';
     width: image-width($cover-start);
     height: image-height($cover-start);
-    background-image: url($cover-start);
+    // background-image: url($cover-start);
 }
 
 #rank-btn {
@@ -199,7 +212,7 @@ body {
     $rank-btn: '../images/rank-btn.png';
     width: image-width($rank-btn);
     height: image-height($rank-btn);
-    background-image: url($rank-btn);
+    // background-image: url($rank-btn);
 }
 
 // rank start=============================================
@@ -865,6 +878,6 @@ $cloud-sprite-dimensions: true;
     left: 37px;
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container, .cloud {
+#cover, #rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container, .cloud, #game-container {
     visibility: hidden;
 }

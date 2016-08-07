@@ -288,7 +288,7 @@ body {
   font-family: 'Avenir Next', 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #000;
+  background: #80b700;
   color: #fff;
   overflow: hidden;
   font-size: 24px;
@@ -366,10 +366,18 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+#loading-num {
+  position: relative;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 56px;
+  z-index: 100;
+}
+
 #cover-bg {
   width: 640px;
   height: 1043px;
-  background-image: url("../images/cover-bg.jpg");
 }
 
 #main-theme {
@@ -377,7 +385,6 @@ body {
   left: 32px;
   width: 579px;
   height: 492px;
-  background-image: url("../images/main-theme.png");
 }
 
 #woman {
@@ -385,7 +392,6 @@ body {
   left: 145px;
   width: 497px;
   height: 598px;
-  background-image: url("../images/woman.png");
 }
 
 #flash {
@@ -393,7 +399,6 @@ body {
   left: 285px;
   width: 132px;
   height: 122px;
-  background-image: url("../images/flash.png");
 }
 
 #xiaoao {
@@ -401,7 +406,6 @@ body {
   left: 21px;
   width: 327px;
   height: 326px;
-  background-image: url("../images/xiaoao.png");
 }
 
 #cover-start {
@@ -409,7 +413,6 @@ body {
   left: 231px;
   width: 234px;
   height: 233px;
-  background-image: url("../images/cover-start.png");
 }
 
 #rank-btn {
@@ -417,7 +420,6 @@ body {
   left: 37px;
   width: 181px;
   height: 72px;
-  background-image: url("../images/rank-btn.png");
 }
 
 #rank-container, #no-face-container {
@@ -1127,7 +1129,7 @@ body {
   left: 37px;
 }
 
-#rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container, .cloud {
+#cover, #rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container, .cloud, #game-container {
   visibility: hidden;
 }
 
