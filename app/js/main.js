@@ -100,6 +100,10 @@ function setBgImages() {
     $('.ok-btn').css('background-image', 'url(images/ok-btn.png)');
     $('#gift-box').css('background-image', 'url(images/gift-box.png)');
     $('.light').css('background-image', 'url(images/light.png)');
+
+    // gift 提交表单页
+    $('#gift-info').css('background-image', 'url(images/gift-info.png)');
+    $('#gift-confirm').css('background-image', 'url(images/gift-confirm.png)');
 }
 
 // 封面首页动画
@@ -232,7 +236,9 @@ function uploadPic() {
 
 // 去生成照片game页
 function goGamePage() {
-    var gameShow = new TimelineMax();
+    var gameShow = new TimelineMax({
+        onComplete: showIntroAn // 显示配饰前导动画
+    });
     gameShow.set('#game-container', {autoAlpha: 1, display: 'block'})
     .fromTo('#game-container', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
 }
@@ -255,6 +261,100 @@ function hideLimitAlert() {
 
 // 点击关闭达到限制界面按钮
 $('#close-limit-alert').on('touchstart', hideLimitAlert);
+
+// 显示配饰前的前导动画
+function showIntroAn() {
+    var introAnShow = new TimelineMax({
+        onComplete: showOpenGift
+    });
+    introAnShow.set('#clouds', {display: 'block', autoAlpha: 1})
+    .add('cloudStart')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart')
+    .set('#cloud1', {autoAlpha: 1}, 'cloudStart')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.1')
+    .set('#cloud2', {autoAlpha: 1}, 'cloudStart+=0.1')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.2')
+    .set('#cloud3', {autoAlpha: 1}, 'cloudStart+=0.2')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.3')
+    .set('#cloud4', {autoAlpha: 1}, 'cloudStart+=0.3')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.4')
+    .set('#cloud5', {autoAlpha: 1}, 'cloudStart+=0.4')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.5')
+    .set('#cloud6', {autoAlpha: 1}, 'cloudStart+=0.5')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.6')
+    .set('#cloud7', {autoAlpha: 1}, 'cloudStart+=0.6')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.7')
+    .set('#cloud8', {autoAlpha: 1}, 'cloudStart+=0.7')
+    .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.8')
+
+}
+
+// 显示拆礼物动画界面
+function showOpenGift() {
+    var giftShow = new TimelineMax({
+        onComplete: function () {
+            giftLightBreath.play(0); // 播放礼物光闪烁
+        }
+    });
+    giftShow.set('#gift-container', {display: 'block', autoAlpha: 1})
+    .fromTo('#gift-box', 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)})
+    .fromTo('.gift-dialouge-container', 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, '-=0.6')
+    .fromTo('#gift-light', 0.6, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.8')
+}
+
+// 礼物光呼吸
+var giftLightBreath = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+giftLightBreath.to('#gift-light', 0.8, {autoAlpha: 0.2, ease: Power2.easeInOut});
+
+// 隐藏拆礼物界面
+function hideOpenGift() {
+    var giftHide = new TimelineMax({
+        onComplete: function () {
+            giftLightBreath.pause(0); // 暂停礼物光闪烁
+            showGiftResult(); // 显示拆礼物结果
+        }
+    });
+    giftHide.to('#gift-container', 0.5, {autoAlpha: 0})
+            .set('#gift-container', {display: 'none'});
+}
+
+// 点击拆礼物ok
+$('#gift-ok').on('touchstart', hideOpenGift);
+
+// 显示拆礼物结果
+function showGiftResult() {
+    // TODO
+    // 决定拆开的礼物是什么东西
+    // 修改id为gift-item-content的html内容
+    // 如$('#gift-item-content').html('恭喜您获得奥运LED胸章一个');
+    var giftInfoShow = new TimelineMax();
+    giftInfoShow.set('#gift-info-container', {display: 'block', autoAlpha: 1})
+    .fromTo('#gift-info-container', 0.2, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('#gift-info', 0.5, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.6)}, '-=0.1')
+}
+
+// 隐藏拆礼物结果页
+function hideGiftResult() {
+    var giftResultHide = new TimelineMax();
+    giftResultHide.to('#gift-info', 0.4, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.6)})
+            .to('#gift-info-container', 0.2, {autoAlpha: 0}, '-=0.1')
+            .set('#gift-info-container', {display: 'none'})
+}
+
+// 拆礼物后,填写表单验证
+$('#gift-confirm').on('touchstart', submitGiftInfo);
+
+// 提交用户表单
+function submitGiftInfo() {
+    // TODO
+    // 做信息校验，不通过return，信息校验通过，alert('提交成功');
+    // alert确定后，执行如下代码，然后执行再次玩
+    hideGiftResult(); // 关闭领取礼物界面
+}
 
 
 (function($) {
