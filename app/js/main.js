@@ -125,6 +125,11 @@ function setBgImages() {
     $('#basketball').css('background-image', 'url(images/basketball.png)');
     $('#football').css('background-image', 'url(images/football.png)');
 
+    // 欢呼
+    $('#cheerl').css('background-image', 'url(images/cheerl.png)');
+    $('#cheerr').css('background-image', 'url(images/cheerr.png)');
+
+
 
 }
 
@@ -591,6 +596,45 @@ ballsRotation.add('ballsRotationStart')
             .to('#basketball', 0.6, {rotation: -360, ease: Power0.easeNone}, 'ballsRotationStart')
             .to('#football', 0.6, {rotation: 360, ease: Power0.easeNone}, 'ballsRotationStart');
 
+
+// 拉拉队欢呼界面
+function showCheer() {
+    var cheerShow = new TimelineMax({
+        onStart: function () {
+            handShake.play(0);
+        }
+    });
+    cheerShow.set('#cheer-container', {display: 'block', autoAlpha: 1})
+    .fromTo(['#cheerl', '#cheerr'], 0.6, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0})
+    .fromTo('#cheer-dialouge', 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.6)}, '-=0.4');
+}
+
+// 隐藏欢呼界面
+function hideCheer() {
+    var cheerHide = new TimelineMax({
+        onStart: hideGame, // 关闭Game界面，之后重新开始
+        onComplete: function () {
+            handShake.pause(0); // 双手抖动停止
+        }
+    });
+    cheerHide.to('#cheer-container', 0.5, {autoAlpha: 0})
+            .set('#cheer-container', {display: 'none'});
+}
+
+// 双手抖动动画
+var handShake = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+handShake.add('shakeStart')
+        .to('#cheerl', 0.2, {rotation: 10, transformOrigin: '203px 652px', ease: Power2.easeInOut}, 'shakeStart')
+        .to('#cheerr', 0.2, {rotation: -10, transformOrigin: '108px 652px', ease: Power2.easeInOut}, 'shakeStart');
+
+// 点击欢呼ok，关闭欢呼界面然后再次开始
+$('#cheer-ok').on('touchstart', hideCheer);
+
+
 // 显示哪个配饰或礼物界面或获得一枚金牌界面
 function determineShowWhich() {
 
@@ -600,7 +644,8 @@ function determineShowWhich() {
     // showYL(); // 显示哑铃界面
     // showJP(); // 显示金牌界面
     // showBomb(); // 显示炸弹界面
-    showBalls(); // 显示双球界面
+    // showBalls(); // 显示双球界面
+    showCheer(); // 显示拉拉队欢呼界面
 }
 
 function restartGame() {
