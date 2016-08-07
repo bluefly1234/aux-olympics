@@ -342,7 +342,7 @@ body {
     $no-face: '../images/no-face.png';
     width: image-width($no-face);
     height: image-height($no-face);
-    background-image: url($no-face);
+    // background-image: url($no-face);
 }
 
 #no-face-confirm {
@@ -351,7 +351,7 @@ body {
     $confirm: '../images/confirm.png';
     width: image-width($confirm);
     height: image-height($confirm);
-    background-image: url($confirm);
+    // background-image: url($confirm);
 }
 
 // game start==============================================
@@ -370,7 +370,7 @@ body {
     $photo-mask: '../images/photo-mask.png';
     width: image-width($photo-mask);
     height: image-height($photo-mask);
-    background-image: url($photo-mask);
+    // background-image: url($photo-mask);
 }
 
 #collection {
@@ -379,7 +379,7 @@ body {
     $collection: '../images/collection.png';
     width: image-width($collection);
     height: image-height($collection);
-    background-image: url($collection);
+    // background-image: url($collection);
 }
 
 .collection-gold {
@@ -388,7 +388,7 @@ body {
     $gold: '../images/gold.png';
     width: image-width($gold);
     height: image-height($gold);
-    background-image: url($gold);
+    // background-image: url($gold);
 }
 
 #gold1 {
@@ -417,7 +417,7 @@ body {
     $sum: '../images/sum.png';
     width: image-width($sum);
     height: image-height($sum);
-    background-image: url($sum);
+    // background-image: url($sum);
 }
 
 #collection-num {
@@ -442,7 +442,7 @@ $dialouge: '../images/dialouge-bg.png';
     left: 41px;
     width: image-width($dialouge);
     height: image-height($dialouge);
-    background-image: url($dialouge);
+    // background-image: url($dialouge);
 }
 
 .front-dialouge {
@@ -461,7 +461,7 @@ $dialouge: '../images/dialouge-bg.png';
     $ok-btn: '../images/ok-btn.png';
     width: image-width($ok-btn);
     height: image-height($ok-btn);
-    background-image: url($ok-btn);
+    // background-image: url($ok-btn);
 }
 
 .dialouge-content {
@@ -483,7 +483,7 @@ $dialouge: '../images/dialouge-bg.png';
     $gift-box: '../images/gift-box.png';
     width: image-width($gift-box);
     height: image-height($gift-box);
-    background-image: url($gift-box);
+    // background-image: url($gift-box);
 }
 
 .light {
@@ -491,7 +491,7 @@ $dialouge: '../images/dialouge-bg.png';
     $light: '../images/light.png';
     width: image-width($light);
     height: image-height($light);
-    background-image: url($light);
+    // background-image: url($light);
 }
 
 #gift-light, #gold-light {

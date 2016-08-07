@@ -522,7 +522,6 @@ body {
   left: 75px;
   width: 495px;
   height: 268px;
-  background-image: url("../images/no-face.png");
 }
 
 #no-face-confirm {
@@ -530,7 +529,6 @@ body {
   left: 152px;
   width: 191px;
   height: 76px;
-  background-image: url("../images/confirm.png");
 }
 
 #game-container {
@@ -540,7 +538,6 @@ body {
 #photo-mask {
   width: 640px;
   height: 1043px;
-  background-image: url("../images/photo-mask.png");
 }
 
 #collection {
@@ -548,7 +545,6 @@ body {
   left: 33px;
   width: 545px;
   height: 166px;
-  background-image: url("../images/collection.png");
 }
 
 .collection-gold {
@@ -556,7 +552,6 @@ body {
   top: 93px;
   width: 53px;
   height: 53px;
-  background-image: url("../images/gold.png");
 }
 
 #gold1 {
@@ -584,7 +579,6 @@ body {
   left: 405px;
   width: 198px;
   height: 94px;
-  background-image: url("../images/sum.png");
 }
 
 #collection-num {
@@ -604,7 +598,6 @@ body {
   left: 41px;
   width: 559px;
   height: 154px;
-  background-image: url("../images/dialouge-bg.png");
 }
 
 .front-dialouge {
@@ -621,7 +614,6 @@ body {
   right: 12px;
   width: 141px;
   height: 141px;
-  background-image: url("../images/ok-btn.png");
 }
 
 .dialouge-content {
@@ -640,14 +632,12 @@ body {
   left: 203px;
   width: 275px;
   height: 255px;
-  background-image: url("../images/gift-box.png");
 }
 
 .light {
   position: absolute;
   width: 640px;
   height: 932px;
-  background-image: url("../images/light.png");
 }
 
 #gift-light, #gold-light {

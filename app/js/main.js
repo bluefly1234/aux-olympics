@@ -86,6 +86,20 @@ function setBgImages() {
     $('#rule-container').css('background-image', 'url(images/universal-bg.jpg)');
     $('#rule').css('background-image', 'url(images/rule.png)');
     $('#rule-start').css('background-image', 'url(images/rule-start.png)');
+
+    // 未检测到人脸界面
+    $('#no-face').css('background-image', 'url(images/no-face.png)');
+    $('#no-face-confirm').css('background-image', 'url(images/confirm.png)');
+
+    // game页
+    $('#photo-mask').css('background-image', 'url(images/photo-mask.png)');
+    $('#collection').css('background-image', 'url(images/collection.png)');
+    $('.collection-gold').css('background-image', 'url(images/gold.png)');
+    $('#collection-sum').css('background-image', 'url(images/sum.png)');
+    $('.dialouge').css('background-image', 'url(images/dialouge-bg.png)');
+    $('.ok-btn').css('background-image', 'url(images/ok-btn.png)');
+    $('#gift-box').css('background-image', 'url(images/gift-box.png)');
+    $('.light').css('background-image', 'url(images/light.png)');
 }
 
 // 封面首页动画
@@ -222,6 +236,25 @@ function goGamePage() {
     gameShow.set('#game-container', {autoAlpha: 1, display: 'block'})
     .fromTo('#game-container', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
 }
+
+// 达到限制提示功能
+function showLimitAlert() {
+    var limitAlertShow = new TimelineMax();
+    limitAlertShow.set('#limit-container', {display: 'block', autoAlpha: 1})
+    .fromTo('#limit-container', 0.2, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('#limit-alert', 0.5, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.6)}, '-=0.1')
+}
+
+// 隐藏达到限制提示界面
+function hideLimitAlert() {
+    var limitAlertHide = new TimelineMax();
+    limitAlertHide.to('#limit-alert', 0.4, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.6)})
+            .to('#limit-container', 0.2, {autoAlpha: 0}, '-=0.1')
+            .set('#limit-container', {display: 'none'})
+}
+
+// 点击关闭达到限制界面按钮
+$('#close-limit-alert').on('touchstart', hideLimitAlert);
 
 
 (function($) {
