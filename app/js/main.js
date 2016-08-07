@@ -110,6 +110,9 @@ function setBgImages() {
     // 去抽奖界面
     $('#go-lottery').css('background-image', 'url(images/go-lottery.png)');
     $('#smile').css('background-image', 'url(images/smile.png)');
+
+    // 哑铃
+    $('#yaling').css('background-image', 'url(images/yaling.png)');
 }
 
 // 封面首页动画
@@ -247,6 +250,15 @@ function goGamePage() {
     });
     gameShow.set('#game-container', {autoAlpha: 1, display: 'block'})
     .fromTo('#game-container', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
+}
+
+// 隐藏照片Game界面
+function hideGame() {
+    var gameHide = new TimelineMax({
+        onComplete: restartGame // 重来上传
+    });
+    gameHide.to('#game-container', 0.5, {autoAlpha: 0})
+            .set('#game-container', {display: 'none'});
 }
 
 // 达到限制提示功能
@@ -388,6 +400,40 @@ function goLottery() {
 // 点击去抽奖按钮
 $('#go-lottery').on('touchstart', hideLotteryAlert);
 
+// 显示哑铃
+function showYL() {
+    var ylShow = new TimelineMax({
+        onComplete: function () {
+            ylUpDown.play(0); // 哑铃往复运动
+        }
+    });
+    ylShow.set('#yaling-container', {display: 'block', autoAlpha: 1})
+    .staggerFromTo(['#yaling', '#yaling-dialouge'], 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, 0.2)
+}
+
+// 隐藏哑铃界面
+function hideYL() {
+    var ylHide = new TimelineMax({
+        onStart: hideGame, // 关闭Game界面，之后重新开始
+        onComplete: function () {
+            ylUpDown.pause(0); // 暂停哑铃往复运动
+        }
+    });
+    ylHide.to('#yaling-container', 0.5, {autoAlpha: 0})
+            .set('#yaling-container', {display: 'none'});
+}
+
+// 哑铃往复运动
+var ylUpDown = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+ylUpDown.to('#yaling', 0.6, {y: 200, ease: Power2.easeInOut});
+
+// 点击哑铃ok，关闭哑铃然后再次开始
+$('#yaling-ok').on('touchstart', hideYL);
+
 // 显示哪个配饰或礼物界面或获得一枚金牌界面
 function determineShowWhich() {
     // TODO
@@ -398,10 +444,18 @@ function determineShowWhich() {
     // 当日金牌收集数量为3时, sumCollectNum==3
     // 这个一天只处理一次，注意第一次为3跳至抽奖界面，再返回玩时当前仍未3，
     // 这时不要再次执行这个
-    showLotteryAlert(); // 显示去抽奖界面
+    // showLotteryAlert(); // 显示去抽奖界面
 
 
     // showOpenGift(); // 显示拆礼物
+    showYL(); // 显示哑铃界面
+}
+
+function restartGame() {
+    // TODO
+    // 清除之前上传的照片，然后跳至规则上传界面
+
+    showRule(); // 显示规则界面
 }
 
 
