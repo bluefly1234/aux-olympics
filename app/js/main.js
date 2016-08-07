@@ -265,7 +265,7 @@ $('#close-limit-alert').on('touchstart', hideLimitAlert);
 // 显示配饰前的前导动画
 function showIntroAn() {
     var introAnShow = new TimelineMax({
-        onComplete: showOpenGift
+        onComplete: determineShowWhich
     });
     introAnShow.set('#clouds', {display: 'block', autoAlpha: 1})
     .add('cloudStart')
@@ -286,6 +286,7 @@ function showIntroAn() {
     .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.7')
     .set('#cloud8', {autoAlpha: 1}, 'cloudStart+=0.7')
     .set('.cloud', {autoAlpha: 0}, 'cloudStart+=0.8')
+    .set('#clouds', {display: 'none', autoAlpha: 0})
 
 }
 
@@ -331,6 +332,7 @@ function showGiftResult() {
     // 决定拆开的礼物是什么东西
     // 修改id为gift-item-content的html内容
     // 如$('#gift-item-content').html('恭喜您获得奥运LED胸章一个');
+    $('#gift-item-content').html('恭喜您获得奥运LED胸章一个');
     var giftInfoShow = new TimelineMax();
     giftInfoShow.set('#gift-info-container', {display: 'block', autoAlpha: 1})
     .fromTo('#gift-info-container', 0.2, {autoAlpha: 0}, {autoAlpha: 1})
@@ -354,6 +356,12 @@ function submitGiftInfo() {
     // 做信息校验，不通过return，信息校验通过，alert('提交成功');
     // alert确定后，执行如下代码，然后执行再次玩
     hideGiftResult(); // 关闭领取礼物界面
+}
+
+// 显示哪个配饰或礼物界面或获得一枚金牌界面
+function determineShowWhich() {
+
+    showOpenGift(); // 显示拆礼物
 }
 
 

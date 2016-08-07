@@ -575,7 +575,7 @@ $dialouge: '../images/dialouge-bg.png';
     $gift-info: '../images/gift-info.png';
     width: image-width($gift-info);
     height: image-height($gift-info);
-    background-image: url($gift-info);
+    // background-image: url($gift-info);
 }
 
 #gift-item-content {
@@ -594,7 +594,7 @@ $dialouge: '../images/dialouge-bg.png';
     $gift-confirm: '../images/gift-confirm.png';
     width: image-width($gift-confirm);
     height: image-height($gift-confirm);
-    background-image: url($gift-confirm);
+    // background-image: url($gift-confirm);
 }
 
 .input-elements {
