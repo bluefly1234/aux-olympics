@@ -546,7 +546,7 @@ $dialouge: '../images/dialouge-bg.png';
     $smile: '../images/smile.png';
     width: image-width($smile);
     height: image-height($smile);
-    background-image: url($smile);
+    // background-image: url($smile);
 }
 
 #go-lottery-content {
@@ -566,7 +566,7 @@ $dialouge: '../images/dialouge-bg.png';
     $go-lottery: '../images/go-lottery.png';
     width: image-width($go-lottery);
     height: image-height($go-lottery);
-    background-image: url($go-lottery);
+    // background-image: url($go-lottery);
 }
 
 #gift-info {

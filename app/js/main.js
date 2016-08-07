@@ -2,6 +2,8 @@
   Author: Kale Chao | FakeCityMan
   Blog: http://kalechao87.github.io/
 **/
+var todayCollectNum; // 当日收集金牌数量
+var sumCollectNum; // 累计收集金牌数量
 // 预加载
 var sourceArr = [
     'images/basketball.png',
@@ -104,6 +106,10 @@ function setBgImages() {
     // gift 提交表单页
     $('#gift-info').css('background-image', 'url(images/gift-info.png)');
     $('#gift-confirm').css('background-image', 'url(images/gift-confirm.png)');
+
+    // 去抽奖界面
+    $('#go-lottery').css('background-image', 'url(images/go-lottery.png)');
+    $('#smile').css('background-image', 'url(images/smile.png)');
 }
 
 // 封面首页动画
@@ -344,7 +350,7 @@ function hideGiftResult() {
     var giftResultHide = new TimelineMax();
     giftResultHide.to('#gift-info', 0.4, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.6)})
             .to('#gift-info-container', 0.2, {autoAlpha: 0}, '-=0.1')
-            .set('#gift-info-container', {display: 'none'})
+            .set('#gift-info-container', {display: 'none'});
 }
 
 // 拆礼物后,填写表单验证
@@ -358,10 +364,44 @@ function submitGiftInfo() {
     hideGiftResult(); // 关闭领取礼物界面
 }
 
+function showLotteryAlert() {
+    var goLotteryShow = new TimelineMax();
+    goLotteryShow.set('#go-lottery-container', {display: 'block', autoAlpha: 1})
+    .fromTo('#go-lottery-container', 0.2, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('#go-lottery-alert', 0.5, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.6)}, '-=0.1')
+}
+
+function hideLotteryAlert() {
+    var goLotteryHide = new TimelineMax({
+        onStart: goLottery
+    });
+    goLotteryHide.to('#go-lottery-alert', 0.4, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.6)})
+            .to('#go-lottery-container', 0.2, {autoAlpha: 0}, '-=0.1')
+            .set('#go-lottery-container', {display: 'none'})
+}
+
+// 去抽奖
+function goLottery() {
+    location.href = '#'; // 抽奖界面链接
+}
+
+// 点击去抽奖按钮
+$('#go-lottery').on('touchstart', hideLotteryAlert);
+
 // 显示哪个配饰或礼物界面或获得一枚金牌界面
 function determineShowWhich() {
+    // TODO
+    // 先判断获得金牌是否达到上限，达到上限显示上限提示showLimitAlert();
+    // showLimitAlert(); // 今日收集达到上限提示
 
-    showOpenGift(); // 显示拆礼物
+    // TODO
+    // 当日金牌收集数量为3时, sumCollectNum==3
+    // 这个一天只处理一次，注意第一次为3跳至抽奖界面，再返回玩时当前仍未3，
+    // 这时不要再次执行这个
+    showLotteryAlert(); // 显示去抽奖界面
+
+
+    // showOpenGift(); // 显示拆礼物
 }
 
 
