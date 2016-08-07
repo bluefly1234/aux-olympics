@@ -171,6 +171,7 @@ function hideRule() {
     var ruleHide = new TimelineMax({
         onComplete: function () {
             ruleStartBounce.pause(0); // 暂停规则开始按钮弹跳动画
+            goGamePage(); // 去生成Game照片页
         }
     });
     ruleHide.to('#rule', 0.6, {autoAlpha: 0, y: -1000, ease: Back.easeIn.config(1.2)})
@@ -178,8 +179,49 @@ function hideRule() {
         .set('#rule-container', {display: 'none'})
 }
 
-// 点击规则页开始按钮
-$('#rule-start').on('touchstart', hideRule);
+// 显示未检测到人脸界面
+function noFaceAlert() {
+    var noFaceShow = new TimelineMax();
+    noFaceShow.set('#no-face-container', {display: 'block', autoAlpha: 1})
+            .fromTo('#no-face-container', 0.2, {autoAlpha: 0}, {autoAlpha: 1})
+            .fromTo('#no-face', 0.5, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.6)}, '-=0.1')
+}
+
+// 隐藏未检测到人脸界面
+function hideNoFace() {
+    var noFaceHide = new TimelineMax();
+    noFaceHide.to('#no-face', 0.4, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.6)})
+            .to('#no-face-container', 0.2, {autoAlpha: 0}, '-=0.1')
+            .set('#no-face-container', {display: 'none'})
+}
+
+// 点击no-face-confirm按钮隐藏未检测到人脸界面
+$('#no-face-confirm').on('touchstart', hideNoFace);
+
+// 点击规则页开始按钮， 调用上传照片功能
+// $('#rule-start').on('touchstart', uploadPic);
+$('#rule-start').on('touchstart', hideRule); // 测试用,直接去game页
+// $('#rule-start').on('touchstart', noFaceAlert); // 测试用,显示未检测到人脸提示
+
+// 上传照片功能
+// TO DO
+// 调用上传照片并校验是否上传成功，上传照片失败/未检测到人脸
+// 要调用noFaceAlert() function后return
+// 上传照片成功后，调用hideRule() function
+function uploadPic() {
+    // TO DO
+    // 失败
+
+    // TO DO
+    // 成功
+}
+
+// 去生成照片game页
+function goGamePage() {
+    var gameShow = new TimelineMax();
+    gameShow.set('#game-container', {autoAlpha: 1, display: 'block'})
+    .fromTo('#game-container', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
+}
 
 
 (function($) {
