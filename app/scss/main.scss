@@ -376,6 +376,16 @@ body {
 //     background-image: url($game-bg);
 // }
 
+#uploaded-pic {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 1043px;
+    max-width: 100%
+}
+
 #photo-mask {
     $photo-mask: '../images/photo-mask.png';
     width: image-width($photo-mask);
@@ -662,7 +672,7 @@ $dialouge: '../images/dialouge-bg.png';
     $glass: '../images/glass.png';
     width: image-width($glass);
     height: image-height($glass);
-    background-image: url($glass);
+    // background-image: url($glass);
 }
 
 #bomb-dialouge-content, #mic-dialouge-content {

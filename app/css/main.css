@@ -548,6 +548,16 @@ body {
   background: #dbae00;
 }
 
+#uploaded-pic {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 1043px;
+  max-width: 100%;
+}
+
 #photo-mask {
   width: 640px;
   height: 1043px;
@@ -803,7 +813,6 @@ body {
   left: 0;
   width: 640px;
   height: 1043px;
-  background-image: url("../images/glass.png");
 }
 
 #bomb-dialouge-content, #mic-dialouge-content {

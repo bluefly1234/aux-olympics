@@ -117,6 +117,10 @@ function setBgImages() {
     // 金牌
     $('#neck-gold').css('background-image', 'url(images/neck-gold.png)');
 
+    // bomb
+    $('#glass').css('background-image', 'url(images/glass.png)');
+
+
 }
 
 // 封面首页动画
@@ -507,14 +511,55 @@ function checkGoldOk() {
 // 点击金牌界面ok按钮
 $('#gold-ok').on('touchstart', checkGoldOk);
 
+// 显示炸弹界面
+function showBomb() {
+    var bombShow = new TimelineMax();
+    bombShow.set('#bomb-container', {display: 'block', autoAlpha: 1})
+    .fromTo('#bomb', 0.6, {autoAlpha: 0, x: -400, y: 600}, {autoAlpha: 1, x: 0, y: 0, ease: Power3.easeOut})
+    .add('bombStart')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart')
+    .set('#bomb-blow1', {autoAlpha: 1}, 'bombStart')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.1')
+    .set('#bomb-blow2', {autoAlpha: 1}, 'bombStart+=0.1')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.2')
+    .set('#bomb-blow3', {autoAlpha: 1}, 'bombStart+=0.2')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.3')
+    .set('#bomb-blow4', {autoAlpha: 1}, 'bombStart+=0.3')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.4')
+    .set('#bomb-blow5', {autoAlpha: 1}, 'bombStart+=0.4')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.5')
+    .set('#bomb-blow6', {autoAlpha: 1}, 'bombStart+=0.5')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.6')
+    .set('#bomb-blow7', {autoAlpha: 1}, 'bombStart+=0.6')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.7')
+    .set('#bomb-blow8', {autoAlpha: 1}, 'bombStart+=0.7')
+    .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.8')
+    .fromTo('#glass', 0.4, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
+    .fromTo('.bomb-dialouge-container', 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.6)}, '-=0.2')
+
+}
+
+// 隐藏炸弹界面
+function hideBomb() {
+    var bombHide = new TimelineMax({
+        onStart: hideGame // 关闭Game界面，之后重新开始
+    });
+    bombHide.to('#bomb-container', 0.5, {autoAlpha: 0})
+            .set('#bomb-container', {display: 'none'});
+}
+
+// 点击炸弹ok，关闭炸弹然后再次开始
+$('#bomb-ok').on('touchstart', hideBomb);
+
 // 显示哪个配饰或礼物界面或获得一枚金牌界面
 function determineShowWhich() {
 
 
 
     // showOpenGift(); // 显示拆礼物
-    showYL(); // 显示哑铃界面
+    // showYL(); // 显示哑铃界面
     // showJP(); // 显示金牌界面
+    showBomb(); // 显示炸弹界面
 }
 
 function restartGame() {
