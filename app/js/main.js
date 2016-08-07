@@ -504,6 +504,10 @@ function addGoldNum() {
     // TODO 显示顶部左侧今日奖牌，id为#gold1……#gold5
     // TODO 修改累计总数量id#collection-num的值
 
+    // 显示左上角金牌数量
+    // 语法如下, id分别为#gold1……#gold5
+    //TweenMax.to('#gold1', 0.5, {autoAlpha: 1});
+
 }
 
 // 金牌界面ok判断功能，达到3时，去弹抽奖页面
@@ -685,12 +689,12 @@ function determineShowWhich() {
 
 
     // showOpenGift(); // 显示拆礼物
-    // showYL(); // 显示哑铃界面
+    showYL(); // 显示哑铃界面
     // showJP(); // 显示金牌界面
     // showBomb(); // 显示炸弹界面
     // showBalls(); // 显示双球界面
     // showCheer(); // 显示拉拉队欢呼界面
-    showMics(); // 显示麦克风界面
+    // showMics(); // 显示麦克风界面
 }
 
 function restartGame() {

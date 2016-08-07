@@ -379,8 +379,8 @@ body {
 #uploaded-pic {
     display: block;
     position: absolute;
-    top: 126px;
-    left: 209px;
+    top: 209px;
+    left: 126px;
     width: 405px;
     height: 512px;
     max-width: 100%
@@ -898,6 +898,11 @@ $cloud-sprite-dimensions: true;
     left: 37px;
 }
 
-#cover, #rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-all-container, #cheer-container, #mic-container, .cloud, #game-container {
+#cover, #rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, #bomb-container, #balls-all-container, #cheer-container, #mic-container, #game-container {
+    // visibility: hidden;
+    display: none;
+}
+
+.collection-gold, .bomb-blow, .cloud {
     visibility: hidden;
 }
