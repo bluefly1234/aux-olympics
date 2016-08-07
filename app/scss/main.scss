@@ -752,7 +752,7 @@ $bomb-sprite-dimensions: true;
     $hand: '../images/hand.png';
     width: image-width($hand);
     height: image-height($hand);
-    background-image: url($hand);
+    // background-image: url($hand);
 }
 
 #basketball {
@@ -761,7 +761,7 @@ $bomb-sprite-dimensions: true;
     $basketball: '../images/basketball.png';
     width: image-width($basketball);
     height: image-height($basketball);
-    background-image: url($basketball);
+    // background-image: url($basketball);
 }
 
 #football {
@@ -770,7 +770,7 @@ $bomb-sprite-dimensions: true;
     $football: '../images/football.png';
     width: image-width($football);
     height: image-height($football);
-    background-image: url($football);
+    // background-image: url($football);
 }
 
 #cheerl {
@@ -898,6 +898,6 @@ $cloud-sprite-dimensions: true;
     left: 37px;
 }
 
-#cover, #rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container, .cloud, #game-container {
+#cover, #rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-all-container, #cheer-container, #mic-container, .cloud, #game-container {
     visibility: hidden;
 }

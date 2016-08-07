@@ -943,7 +943,6 @@ body {
   left: 107px;
   width: 345px;
   height: 263px;
-  background-image: url("../images/hand.png");
 }
 
 #basketball {
@@ -951,7 +950,6 @@ body {
   left: 0;
   width: 237px;
   height: 237px;
-  background-image: url("../images/basketball.png");
 }
 
 #football {
@@ -959,7 +957,6 @@ body {
   right: 0;
   width: 240px;
   height: 240px;
-  background-image: url("../images/football.png");
 }
 
 #cheerl {
@@ -1126,7 +1123,7 @@ body {
   left: 37px;
 }
 
-#cover, #rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-container, #cheer-container, #mic-container, .cloud, #game-container {
+#cover, #rank-container, #rule-container, #no-face-container, #gift-container, #limit-container, #go-lottery-container, #gift-info-container, #yaling-container, #get-gold-container, .bomb-blow, #bomb-container, #balls-all-container, #cheer-container, #mic-container, .cloud, #game-container {
   visibility: hidden;
 }
 

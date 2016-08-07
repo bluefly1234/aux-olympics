@@ -120,6 +120,11 @@ function setBgImages() {
     // bomb
     $('#glass').css('background-image', 'url(images/glass.png)');
 
+    // 双球
+    $('#hand').css('background-image', 'url(images/hand.png)');
+    $('#basketball').css('background-image', 'url(images/basketball.png)');
+    $('#football').css('background-image', 'url(images/football.png)');
+
 
 }
 
@@ -535,7 +540,7 @@ function showBomb() {
     .set('#bomb-blow8', {autoAlpha: 1}, 'bombStart+=0.7')
     .set('.bomb-blow', {autoAlpha: 0}, 'bombStart+=0.8')
     .fromTo('#glass', 0.4, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
-    .fromTo('.bomb-dialouge-container', 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.6)}, '-=0.2')
+    .fromTo('.bomb-dialouge-container', 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.6)}, '-=0.2');
 
 }
 
@@ -551,6 +556,41 @@ function hideBomb() {
 // 点击炸弹ok，关闭炸弹然后再次开始
 $('#bomb-ok').on('touchstart', hideBomb);
 
+// 显示双球界面动画
+function showBalls() {
+    var ballShow = new TimelineMax({
+        onStart: function () {
+            ballsRotation.play(0); // 双球旋转
+        }
+    });
+    ballShow.set('#balls-all-container', {display: 'block', autoAlpha: 1})
+    .staggerFromTo(['#balls-container', '#balls-dialouge'], 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, 0.2)
+}
+
+// 隐藏双球界面
+function hideBalls() {
+    var ballsHide = new TimelineMax({
+        onStart: hideGame, // 关闭Game界面，之后重新开始
+        onComplete: function () {
+            ballsRotation.pause(0); // 双球旋转停止
+        }
+    });
+    ballsHide.to('#balls-all-container', 0.5, {autoAlpha: 0})
+            .set('#balls-all-container', {display: 'none'});
+}
+
+// 点击双球ok，关闭双球界面然后再次开始
+$('#balls-ok').on('touchstart', hideBalls);
+
+// 双球转动
+var ballsRotation = new TimelineMax({
+    paused: true,
+    repeat: -1
+});
+ballsRotation.add('ballsRotationStart')
+            .to('#basketball', 0.6, {rotation: -360, ease: Power0.easeNone}, 'ballsRotationStart')
+            .to('#football', 0.6, {rotation: 360, ease: Power0.easeNone}, 'ballsRotationStart');
+
 // 显示哪个配饰或礼物界面或获得一枚金牌界面
 function determineShowWhich() {
 
@@ -559,7 +599,8 @@ function determineShowWhich() {
     // showOpenGift(); // 显示拆礼物
     // showYL(); // 显示哑铃界面
     // showJP(); // 显示金牌界面
-    showBomb(); // 显示炸弹界面
+    // showBomb(); // 显示炸弹界面
+    showBalls(); // 显示双球界面
 }
 
 function restartGame() {
