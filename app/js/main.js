@@ -129,6 +129,13 @@ function setBgImages() {
     $('#cheerl').css('background-image', 'url(images/cheerl.png)');
     $('#cheerr').css('background-image', 'url(images/cheerr.png)');
 
+    // 麦克风
+    $('#mic1').css('background-image', 'url(images/mic1.png)');
+    $('#mic2').css('background-image', 'url(images/mic2.png)');
+    $('#mic3').css('background-image', 'url(images/mic3.png)');
+    $('#mic4').css('background-image', 'url(images/mic4.png)');
+    $('#mic5').css('background-image', 'url(images/mic5.png)');
+
 
 
 }
@@ -634,6 +641,43 @@ handShake.add('shakeStart')
 // 点击欢呼ok，关闭欢呼界面然后再次开始
 $('#cheer-ok').on('touchstart', hideCheer);
 
+// 显示麦克界面
+function showMics() {
+    var micShow = new TimelineMax({
+        onComplete: function () {
+            micShake.play(0);
+        }
+    });
+    micShow.set('#mic-container', {autoAlpha: 1, display: 'block'})
+            .staggerFromTo(['#mics', '#mic-dialouge'], 0.8, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, 0.2);
+}
+
+// 麦克风晃动
+var micShake = new TimelineMax({
+    paused: true
+});
+micShake.add('micShakeStart')
+        .to('#mic1', 0.5, {rotation: -5, transformOrigin: '0 415px', ease: Power2.easeInOut, repeat: -1, yoyo: true}, 'shakeStart')
+        .to('#mic2', 0.6, {rotation: -6, transformOrigin: '99px bottom', ease: Power2.easeInOut, repeat: -1, yoyo: true}, 'shakeStart')
+        .to('#mic3', 0.7, {y: 20, ease: Power2.easeInOut, repeat: -1, yoyo: true}, 'shakeStart')
+        .to('#mic4', 0.6, {y: 20, ease: Power2.easeInOut, repeat: -1, yoyo: true}, 'shakeStart')
+        .to('#mic5', 0.7, {rotation: 6, transformOrigin: 'right 267px', ease: Power2.easeInOut, repeat: -1, yoyo: true}, 'shakeStart');
+
+// 隐藏麦克风界面
+function hideMics() {
+    var micHide = new TimelineMax({
+        onStart: hideGame, // 关闭Game界面，之后重新开始
+        onComplete: function () {
+            micShake.pause(0); // 麦克风抖动停止
+        }
+    });
+    micHide.to('#mic-container', 0.5, {autoAlpha: 0})
+            .set('#mic-container', {display: 'none'});
+}
+
+// 点击麦克风ok，关闭麦克风界面然后再次开始
+$('#mic-ok').on('touchstart', hideMics);
+
 
 // 显示哪个配饰或礼物界面或获得一枚金牌界面
 function determineShowWhich() {
@@ -645,7 +689,8 @@ function determineShowWhich() {
     // showJP(); // 显示金牌界面
     // showBomb(); // 显示炸弹界面
     // showBalls(); // 显示双球界面
-    showCheer(); // 显示拉拉队欢呼界面
+    // showCheer(); // 显示拉拉队欢呼界面
+    showMics(); // 显示麦克风界面
 }
 
 function restartGame() {

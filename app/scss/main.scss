@@ -379,10 +379,10 @@ body {
 #uploaded-pic {
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 640px;
-    height: 1043px;
+    top: 126px;
+    left: 209px;
+    width: 405px;
+    height: 512px;
     max-width: 100%
 }
 
@@ -804,7 +804,7 @@ $bomb-sprite-dimensions: true;
     $mic1: '../images/mic1.png';
     width: image-width($mic1);
     height: image-height($mic1);
-    background-image: url($mic1);
+    // background-image: url($mic1);
 }
 
 #mic2 {
@@ -813,7 +813,7 @@ $bomb-sprite-dimensions: true;
     $mic2: '../images/mic2.png';
     width: image-width($mic2);
     height: image-height($mic2);
-    background-image: url($mic2);
+    // background-image: url($mic2);
 }
 
 #mic3 {
@@ -822,7 +822,7 @@ $bomb-sprite-dimensions: true;
     $mic3: '../images/mic3.png';
     width: image-width($mic3);
     height: image-height($mic3);
-    background-image: url($mic3);
+    // background-image: url($mic3);
 }
 
 #mic4 {
@@ -831,7 +831,7 @@ $bomb-sprite-dimensions: true;
     $mic4: '../images/mic4.png';
     width: image-width($mic4);
     height: image-height($mic4);
-    background-image: url($mic4);
+    // background-image: url($mic4);
 }
 
 #mic5 {
@@ -840,7 +840,7 @@ $bomb-sprite-dimensions: true;
     $mic5: '../images/mic5.png';
     width: image-width($mic5);
     height: image-height($mic5);
-    background-image: url($mic5);
+    // background-image: url($mic5);
 }
 
 #clouds {

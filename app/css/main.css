@@ -551,10 +551,10 @@ body {
 #uploaded-pic {
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 640px;
-  height: 1043px;
+  top: 126px;
+  left: 209px;
+  width: 405px;
+  height: 512px;
   max-width: 100%;
 }
 
@@ -985,7 +985,6 @@ body {
   left: 0;
   width: 186px;
   height: 451px;
-  background-image: url("../images/mic1.png");
 }
 
 #mic2 {
@@ -993,7 +992,6 @@ body {
   left: 6px;
   width: 302px;
   height: 457px;
-  background-image: url("../images/mic2.png");
 }
 
 #mic3 {
@@ -1001,7 +999,6 @@ body {
   left: 265px;
   width: 149px;
   height: 401px;
-  background-image: url("../images/mic3.png");
 }
 
 #mic4 {
@@ -1009,7 +1006,6 @@ body {
   left: 392px;
   width: 142px;
   height: 449px;
-  background-image: url("../images/mic4.png");
 }
 
 #mic5 {
@@ -1017,7 +1013,6 @@ body {
   left: 457px;
   width: 183px;
   height: 434px;
-  background-image: url("../images/mic5.png");
 }
 
 #clouds {
