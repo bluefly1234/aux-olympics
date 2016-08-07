@@ -226,7 +226,7 @@ body {
     $rank: '../images/rank-bg.png';
     width: image-width($rank);
     height: image-height($rank);
-    background-image: url($rank);
+    // background-image: url($rank);
 }
 
 #ranklist {
@@ -292,7 +292,7 @@ body {
     $top-one: '../images/top-one.png';
     width: image-width($top-one);
     height: image-height($top-one);
-    background-image: url($top-one);
+    // background-image: url($top-one);
     margin: {
         left: -(image-width($top-one)/2);
     }
@@ -308,11 +308,11 @@ body {
     $close-btn: '../images/close-btn.png';
     width: image-width($close-btn);
     height: image-height($close-btn);
-    background-image: url($close-btn);
+    // background-image: url($close-btn);
 }
 
 #rule-container {
-    background-image: url('../images/universal-bg.jpg');
+    // background-image: url('../images/universal-bg.jpg');
 }
 
 #rule {
@@ -324,7 +324,7 @@ body {
     $rule: '../images/rule.png';
     width: image-width($rule);
     height: image-height($rule);
-    background-image: url($rule);
+    // background-image: url($rule);
 }
 
 #rule-start {
@@ -333,7 +333,7 @@ body {
     $rule-start: '../images/rule-start.png';
     width: image-width($rule-start);
     height: image-height($rule-start);
-    background-image: url($rule-start);
+    // background-image: url($rule-start);
 }
 
 #no-face {

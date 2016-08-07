@@ -431,7 +431,6 @@ body {
   left: 76px;
   width: 492px;
   height: 785px;
-  background-image: url("../images/rank-bg.png");
 }
 
 #ranklist {
@@ -489,7 +488,6 @@ body {
   left: 50%;
   width: 41px;
   height: 44px;
-  background-image: url("../images/top-one.png");
   margin-left: -20.5px;
 }
 
@@ -502,11 +500,6 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-image: url("../images/close-btn.png");
-}
-
-#rule-container {
-  background-image: url("../images/universal-bg.jpg");
 }
 
 #rule {
@@ -515,7 +508,6 @@ body {
   margin-bottom: 60px;
   width: 495px;
   height: 2299px;
-  background-image: url("../images/rule.png");
 }
 
 #rule-start {
@@ -523,7 +515,6 @@ body {
   left: 125px;
   width: 187px;
   height: 187px;
-  background-image: url("../images/rule-start.png");
 }
 
 #no-face {

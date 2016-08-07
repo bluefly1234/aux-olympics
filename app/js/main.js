@@ -76,6 +76,16 @@ function setBgImages() {
     $('#xiaoao').css('background-image', 'url(images/xiaoao.png)');
     $('#cover-start').css('background-image', 'url(images/cover-start.png)');
     $('#rank-btn').css('background-image', 'url(images/rank-btn.png)');
+
+    // 排行榜
+    $('#rank').css('background-image', 'url(images/rank-bg.png)');
+    $('#top-one').css('background-image', 'url(images/top-one.png)');
+    $('.close-btn').css('background-image', 'url(images/close-btn.png)');
+
+    // 规则页
+    $('#rule-container').css('background-image', 'url(images/universal-bg.jpg)');
+    $('#rule').css('background-image', 'url(images/rule.png)');
+    $('#rule-start').css('background-image', 'url(images/rule-start.png)');
 }
 
 // 封面首页动画
@@ -93,6 +103,13 @@ function showCover() {
             .fromTo('#flash', 0.8, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Elastic.easeOut.config(1.5, 0.2), force3D: true}, '-=0.3')
             .fromTo('#cover-start', 0.8, {autoAlpha: 0, y: 300}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.6)}, '-=0.4')
             .fromTo('#rank-btn', 0.6, {autoAlpha: 0, x: -200}, {autoAlpha: 1, x: 0}, '-=0.8')
+}
+
+// 隐藏封面功能
+function hideCover() {
+    TweenMax.set('#cover', {display: 'none', autoAlpha: 0});
+    coverStartBounce.pause(0); // 停止首页开始按钮弹跳动画
+
 }
 
 // 开始游戏按钮弹跳
@@ -124,6 +141,45 @@ $('#rank-btn').on('touchstart', showRank);
 
 // 点击关闭排行榜按钮
 $('#close-rank').on('touchstart', hideRank);
+
+// 点击封面开始按钮
+$('#cover-start').on('touchstart', showRule);
+
+// 显示规则页面/上传照片功能界面
+function showRule() {
+    var ruleShow = new TimelineMax({
+        onComplete: function () {
+            hideCover(); // 隐藏封面
+            ruleStartBounce.play(0); // 规则页按钮弹跳
+        }
+    });
+    ruleShow.set('#rule-container', {display: 'block', autoAlpha: 1})
+    .fromTo('#rule-container', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('#rule', 0.8, {autoAlpha: 0, y: 1000}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, '-=0.2')
+}
+
+// rule start 按钮弹跳动画
+var ruleStartBounce = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+ruleStartBounce.to('#rule-start', 0.6, {scale: 1.1, ease: Power2.easeInOut});
+
+// 隐藏规则页面
+function hideRule() {
+    var ruleHide = new TimelineMax({
+        onComplete: function () {
+            ruleStartBounce.pause(0); // 暂停规则开始按钮弹跳动画
+        }
+    });
+    ruleHide.to('#rule', 0.6, {autoAlpha: 0, y: -1000, ease: Back.easeIn.config(1.2)})
+        .to('#rule-container', 0.4, {autoAlpha: 0}, '-=0.2')
+        .set('#rule-container', {display: 'none'})
+}
+
+// 点击规则页开始按钮
+$('#rule-start').on('touchstart', hideRule);
 
 
 (function($) {
