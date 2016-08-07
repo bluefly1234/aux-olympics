@@ -643,7 +643,7 @@ $dialouge: '../images/dialouge-bg.png';
     $neck-gold: '../images/neck-gold.png';
     width: image-width($neck-gold);
     height: image-height($neck-gold);
-    background-image: url($neck-gold);
+    // background-image: url($neck-gold);
 }
 
 #glass {

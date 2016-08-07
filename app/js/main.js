@@ -113,6 +113,10 @@ function setBgImages() {
 
     // 哑铃
     $('#yaling').css('background-image', 'url(images/yaling.png)');
+
+    // 金牌
+    $('#neck-gold').css('background-image', 'url(images/neck-gold.png)');
+
 }
 
 // 封面首页动画
@@ -434,21 +438,83 @@ ylUpDown.to('#yaling', 0.6, {y: 200, ease: Power2.easeInOut});
 // 点击哑铃ok，关闭哑铃然后再次开始
 $('#yaling-ok').on('touchstart', hideYL);
 
-// 显示哪个配饰或礼物界面或获得一枚金牌界面
-function determineShowWhich() {
+// 显示金牌界面
+function showJP() {
+    var jpShow = new TimelineMax({
+        onComplete: function () {
+            goldLightBreath.play(0); // 金牌光呼吸
+            addGoldNum(); // 执行添加金牌数量功能
+        }
+    });
+    jpShow.set('#get-gold-container', {display: 'block', autoAlpha: 1})
+    .fromTo('#neck-gold', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('.gold-dialouge-container', 0.6, {autoAlpha: 0, y: 600}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.6)}, '-=0.2')
+    .fromTo('#gold-light', 0.5, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.6')
+}
+
+// 隐藏哑铃界面
+function hideJP() {
+    var goldHide = new TimelineMax({
+        onStart: hideGame, // 关闭Game界面，之后重新开始
+        onComplete: function () {
+            goldLightBreath.pause(0); // 暂停金牌光呼吸动画
+        }
+    });
+    goldHide.to('#get-gold-container', 0.5, {autoAlpha: 0})
+            .set('#get-gold-container', {display: 'none'});
+}
+
+// 金牌光呼吸
+var goldLightBreath = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+goldLightBreath.to('#gold-light', 0.8, {autoAlpha: 0.2, ease: Power2.easeInOut});
+
+// TODO
+// 增加奖牌数量功能,出现金牌界面或分享时执行
+// 注意，当日金币，总金币都需做增加功能
+// 当日金币达到5时不再增加
+
+function addGoldNum() {
+    // todayCollectNum; // 当日收集金牌数量
+    // sumCollectNum; // 累计收集金牌数量
+    // TODO 显示顶部左侧今日奖牌，id为#gold1……#gold5
+    // TODO 修改累计总数量id#collection-num的值
+
+}
+
+// 金牌界面ok判断功能，达到3时，去弹抽奖页面
+// 达到5时提示上限
+// 其他情况继续玩
+function checkGoldOk() {
     // TODO
     // 先判断获得金牌是否达到上限，达到上限显示上限提示showLimitAlert();
     // showLimitAlert(); // 今日收集达到上限提示
 
     // TODO
-    // 当日金牌收集数量为3时, sumCollectNum==3
+    // 当日金牌收集数量为3时, todayCollectNum==3
     // 这个一天只处理一次，注意第一次为3跳至抽奖界面，再返回玩时当前仍未3，
     // 这时不要再次执行这个
     // showLotteryAlert(); // 显示去抽奖界面
 
+    // 未达到金牌数量3或5时继续玩
+    hideJP(); // 隐藏金牌界面
+
+}
+
+// 点击金牌界面ok按钮
+$('#gold-ok').on('touchstart', checkGoldOk);
+
+// 显示哪个配饰或礼物界面或获得一枚金牌界面
+function determineShowWhich() {
+
+
 
     // showOpenGift(); // 显示拆礼物
-    showYL(); // 显示哑铃界面
+    // showYL(); // 显示哑铃界面
+    showJP(); // 显示金牌界面
 }
 
 function restartGame() {
