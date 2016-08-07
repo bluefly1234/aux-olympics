@@ -634,7 +634,7 @@ $dialouge: '../images/dialouge-bg.png';
     $yaling: '../images/yaling.png';
     width: image-width($yaling);
     height: image-height($yaling);
-    background-image: url($yaling);
+    // background-image: url($yaling);
 }
 
 #neck-gold {
