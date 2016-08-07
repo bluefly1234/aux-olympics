@@ -101,7 +101,29 @@ var coverStartBounce = new TimelineMax({
     repeat: -1,
     yoyo: true
 });
-coverStartBounce.to('#cover-start', 0.8, {scale: 1.2, ease: Power2.easeInOut});
+coverStartBounce.to('#cover-start', 0.6, {scale: 1.2, ease: Power2.easeInOut});
+
+// 显示排行榜
+function showRank() {
+    var rankShow = new TimelineMax();
+    rankShow.set('#rank-container', {display: 'block', autoAlpha: 1})
+        .fromTo('#rank-container', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
+        .fromTo('#rank', 0.6, {autoAlpha: 0, y: -1000}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, '-=0.2')
+}
+
+// 隐藏排行榜界面
+function hideRank() {
+    var rankHide = new TimelineMax();
+    rankHide.to('#rank', 0.6, {autoAlpha: 0, y: -1000, ease: Back.easeIn.config(1.2)})
+            .to('#rank-container', 0.3, {autoAlpha: 0}, '-=0.1')
+            .set('#rank-container', {display: 'none'})
+}
+
+// 点击排行榜按钮
+$('#rank-btn').on('touchstart', showRank);
+
+// 点击关闭排行榜按钮
+$('#close-rank').on('touchstart', hideRank);
 
 
 (function($) {
