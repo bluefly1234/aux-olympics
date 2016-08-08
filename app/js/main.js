@@ -5,7 +5,7 @@
 var todayCollectNum; // 当日收集金牌数量
 var sumCollectNum; // 累计收集金牌数量
 var bombSnd = $('#bomb-snd')[0];
-var bgSnd = $('#bgmusic')[0];
+var bgAud = $('#bgmusic')[0];
 var micSnd = $('#mic-snd')[0];
 
 // 预加载
@@ -49,6 +49,8 @@ var sourceArr = [
     'images/rule.png',
     'images/rule-start.png',
     'images/smile.png',
+    'images/play.png',
+    'images/mute.png',
     'media/bomb.mp3'
 ]; //需要加载的资源列表
 
@@ -66,7 +68,8 @@ new mo.Loader(sourceArr,{
             onStart: setBgImages,
             delay: 2,
             onComplete: function () {
-                playBgSnd();
+                TweenMax.set('#music-control', {autoAlpha: 1});
+                bgAud.play();
                 showCover();
             }
         });
@@ -85,6 +88,7 @@ function setBgImages() {
     $('#xiaoao').css('background-image', 'url(images/xiaoao.png)');
     $('#cover-start').css('background-image', 'url(images/cover-start.png)');
     $('#rank-btn').css('background-image', 'url(images/rank-btn.png)');
+    $('#music-control').css('background-image', 'url(images/play.png)');
 
     // 排行榜
     $('#rank').css('background-image', 'url(images/rank-bg.png)');
@@ -148,22 +152,10 @@ function setBgImages() {
     $('#mic-snd').attr('src', 'media/mic.mp3');
     $('#bgmusic').attr('src', 'media/bgmusic.mp3');
 
-
-
 }
 
 function playBombSnd() {
     bombSnd.play();
-}
-
-// 背景音乐播放
-function playBgSnd() {
-    bgSnd.play();
-}
-
-// 背景音乐暂停
-function pauseBgSnd() {
-    bgSnd.pause();
 }
 
 // 麦克音乐播放
@@ -176,6 +168,38 @@ function pauseMicSnd() {
     micSnd.pause();
     micSnd.currentTime = 0;
 }
+
+function initAud(){
+    if (bgAud.currentTime){
+        console.log("背景音乐开始播放");
+        $('#music-control').css('background-image', 'url(images/mute.png)');
+        bgAud.removeEventListener("timeupdate", initAud, false); //只执行一次，防止控制按钮动画无法暂停
+    }
+}
+
+bgAud.addEventListener("timeupdate", initAud, false);
+
+function playBM() {
+    bgAud.play();
+    $('#music-control').css('background-image', 'url(images/mute.png)');
+}
+
+function pauseBM() {
+    bgAud.pause();
+    $('#music-control').css('background-image', 'url(images/play.png)');
+}
+
+// 音乐控制
+$("#music-control").on('touchstart', function(){
+    console.log('111');
+  if(bgAud.paused){
+    playBM();
+  }else{
+    pauseBM();
+  }
+});
+
+// music-control End------------------------------
 
 // 封面首页动画
 function showCover() {

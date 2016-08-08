@@ -163,6 +163,15 @@ body {
     z-index: 100;
 }
 
+#music-control {
+    top: 49px;
+    left: 443px;
+    $play: '../images/play.png';
+    width: image-width($play);
+    height: image-height($play);
+    // background-image: url($play);
+}
+
 // cover ==================================================================
 #cover-bg {
     $cover-bg: '../images/cover-bg.jpg';
@@ -916,6 +925,6 @@ $cloud-sprite-dimensions: true;
     display: none;
 }
 
-.collection-gold, .bomb-blow, .cloud {
+.collection-gold, .bomb-blow, .cloud, #music-control {
     visibility: hidden;
 }

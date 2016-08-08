@@ -388,6 +388,13 @@ body {
   z-index: 100;
 }
 
+#music-control {
+  top: 49px;
+  left: 443px;
+  width: 165px;
+  height: 49px;
+}
+
 #cover-bg {
   width: 640px;
   height: 1043px;
@@ -418,7 +425,7 @@ body {
   top: 640px;
   left: 21px;
   width: 327px;
-  height: 326px;
+  height: 361px;
 }
 
 #cover-start {
@@ -1128,7 +1135,7 @@ body {
   display: none;
 }
 
-.collection-gold, .bomb-blow, .cloud {
+.collection-gold, .bomb-blow, .cloud, #music-control {
   visibility: hidden;
 }
 
