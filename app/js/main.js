@@ -4,6 +4,7 @@
 **/
 var todayCollectNum; // 当日收集金牌数量
 var sumCollectNum; // 累计收集金牌数量
+var bombSnd = $('#bomb-snd')[0];
 // 预加载
 var sourceArr = [
     'images/basketball.png',
@@ -43,7 +44,8 @@ var sourceArr = [
     'images/rank-btn.png',
     'images/rule.png',
     'images/rule-start.png',
-    'images/smile.png'
+    'images/smile.png',
+    'media/bomb.mp3'
 ]; //需要加载的资源列表
 
 new mo.Loader(sourceArr,{
@@ -136,8 +138,14 @@ function setBgImages() {
     $('#mic4').css('background-image', 'url(images/mic4.png)');
     $('#mic5').css('background-image', 'url(images/mic5.png)');
 
+    $('#bomb-snd').attr('src', 'media/bomb.mp3');
 
 
+
+}
+
+function playBombSnd() {
+    bombSnd.play();
 }
 
 // 封面首页动画
@@ -536,7 +544,7 @@ $('#gold-ok').on('touchstart', checkGoldOk);
 function showBomb() {
     var bombShow = new TimelineMax();
     bombShow.set('#bomb-container', {display: 'block', autoAlpha: 1})
-    .fromTo('#bomb', 0.6, {autoAlpha: 0, x: -400, y: 600}, {autoAlpha: 1, x: 0, y: 0, ease: Power3.easeOut})
+    .fromTo('#bomb', 0.6, {autoAlpha: 0, x: -400, y: 600}, {autoAlpha: 1, x: 0, y: 0, ease: Power3.easeOut, onComplete: playBombSnd})
     .add('bombStart')
     .set('.bomb-blow', {autoAlpha: 0}, 'bombStart')
     .set('#bomb-blow1', {autoAlpha: 1}, 'bombStart')
@@ -689,9 +697,9 @@ function determineShowWhich() {
 
 
     // showOpenGift(); // 显示拆礼物
-    showYL(); // 显示哑铃界面
+    // showYL(); // 显示哑铃界面
     // showJP(); // 显示金牌界面
-    // showBomb(); // 显示炸弹界面
+    showBomb(); // 显示炸弹界面
     // showBalls(); // 显示双球界面
     // showCheer(); // 显示拉拉队欢呼界面
     // showMics(); // 显示麦克风界面
