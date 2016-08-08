@@ -5,6 +5,9 @@
 var todayCollectNum; // 当日收集金牌数量
 var sumCollectNum; // 累计收集金牌数量
 var bombSnd = $('#bomb-snd')[0];
+var bgSnd = $('#bgmusic')[0];
+var micSnd = $('#mic-snd')[0];
+
 // 预加载
 var sourceArr = [
     'images/basketball.png',
@@ -62,6 +65,7 @@ new mo.Loader(sourceArr,{
             onStart: setBgImages,
             delay: 2,
             onComplete: function () {
+                playBgSnd();
                 showCover();
             }
         });
@@ -139,6 +143,8 @@ function setBgImages() {
     $('#mic5').css('background-image', 'url(images/mic5.png)');
 
     $('#bomb-snd').attr('src', 'media/bomb.mp3');
+    $('#mic-snd').attr('src', 'media/mic.mp3');
+    $('#bgmusic').attr('src', 'media/bgmusic.mp3');
 
 
 
@@ -146,6 +152,27 @@ function setBgImages() {
 
 function playBombSnd() {
     bombSnd.play();
+}
+
+// 背景音乐播放
+function playBgSnd() {
+    bgSnd.play();
+}
+
+// 背景音乐暂停
+function pauseBgSnd() {
+    bgSnd.pause();
+}
+
+// 麦克音乐播放
+function playMicSnd() {
+    micSnd.play();
+}
+
+// 麦克音乐暂停
+function pauseMicSnd() {
+    micSnd.pause();
+    micSnd.currentTime = 0;
 }
 
 // 封面首页动画
@@ -655,6 +682,8 @@ $('#cheer-ok').on('touchstart', hideCheer);
 
 // 显示麦克界面
 function showMics() {
+    // pauseBgSnd(); // 暂停背景音乐
+    playMicSnd(); // 播放麦克音乐
     var micShow = new TimelineMax({
         onComplete: function () {
             micShake.play(0);
@@ -681,6 +710,8 @@ function hideMics() {
         onStart: hideGame, // 关闭Game界面，之后重新开始
         onComplete: function () {
             micShake.pause(0); // 麦克风抖动停止
+            pauseMicSnd(); // 强制停止音乐
+            // playBgSnd(); // 继续播放背景音乐
         }
     });
     micHide.to('#mic-container', 0.5, {autoAlpha: 0})
@@ -699,10 +730,10 @@ function determineShowWhich() {
     // showOpenGift(); // 显示拆礼物
     // showYL(); // 显示哑铃界面
     // showJP(); // 显示金牌界面
-    showBomb(); // 显示炸弹界面
+    // showBomb(); // 显示炸弹界面
     // showBalls(); // 显示双球界面
     // showCheer(); // 显示拉拉队欢呼界面
-    // showMics(); // 显示麦克风界面
+    showMics(); // 显示麦克风界面
 }
 
 function restartGame() {
