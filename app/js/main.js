@@ -12,6 +12,7 @@ var micSnd = $('#mic-snd')[0];
 var sourceArr = [
     'images/basketball.png',
     'images/bomb-s9ff2090ab4.png',
+    'images/check-rank.png',
     'images/cheerl.png',
     'images/cheerr.png',
     'images/close-btn.png',
@@ -87,6 +88,7 @@ function setBgImages() {
 
     // 排行榜
     $('#rank').css('background-image', 'url(images/rank-bg.png)');
+    $('#check-rank').css('background-image', 'url(images/check-rank.png)');
     $('#top-one').css('background-image', 'url(images/top-one.png)');
     $('.close-btn').css('background-image', 'url(images/close-btn.png)');
 
@@ -224,7 +226,7 @@ function hideRank() {
 }
 
 // 点击排行榜按钮
-$('#rank-btn').on('touchstart', showRank);
+$('#rank-btn, #check-rank').on('touchstart', showRank);
 
 // 点击关闭排行榜按钮
 $('#close-rank').on('touchstart', hideRank);

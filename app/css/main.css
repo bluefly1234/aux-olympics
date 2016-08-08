@@ -437,6 +437,7 @@ body {
 
 #rank-container, #no-face-container {
   background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
 }
 
 #rank {
@@ -520,7 +521,7 @@ body {
   left: 75px;
   margin-bottom: 60px;
   width: 495px;
-  height: 2299px;
+  height: 2434px;
 }
 
 #rule-start {
@@ -528,6 +529,13 @@ body {
   left: 125px;
   width: 187px;
   height: 187px;
+}
+
+#check-rank {
+  top: 2280px;
+  left: 44px;
+  width: 245px;
+  height: 124px;
 }
 
 #no-face {

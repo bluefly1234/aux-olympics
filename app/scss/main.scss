@@ -228,7 +228,9 @@ body {
 // rank start=============================================
 #rank-container, #no-face-container {
     background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
 }
+
 
 #rank {
     top: 110px;
@@ -323,6 +325,7 @@ body {
 
 #rule-container {
     // background-image: url('../images/universal-bg.jpg');
+
 }
 
 #rule {
@@ -335,6 +338,7 @@ body {
     width: image-width($rule);
     height: image-height($rule);
     // background-image: url($rule);
+
 }
 
 #rule-start {
@@ -344,6 +348,15 @@ body {
     width: image-width($rule-start);
     height: image-height($rule-start);
     // background-image: url($rule-start);
+}
+
+#check-rank {
+    top: 2280px;
+    left: 44px;
+    $check-rank: '../images/check-rank.png';
+    width: image-width($check-rank);
+    height: image-height($check-rank);
+    // background-image: url($check-rank);
 }
 
 #no-face {
