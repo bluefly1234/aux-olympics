@@ -206,6 +206,7 @@ function showCover() {
     var coverShow = new TimelineMax({
         onComplete: function () {
             coverStartBounce.play(0);
+            rankBreath.play(0);
         }
     });
     coverShow.set('#cover', {display: 'block', autoAlpha: 1})
@@ -222,7 +223,7 @@ function showCover() {
 function hideCover() {
     TweenMax.set('#cover', {display: 'none', autoAlpha: 0});
     coverStartBounce.pause(0); // 停止首页开始按钮弹跳动画
-
+    rankBreath.pause(0);
 }
 
 // 开始游戏按钮弹跳
@@ -232,6 +233,15 @@ var coverStartBounce = new TimelineMax({
     yoyo: true
 });
 coverStartBounce.to('#cover-start', 0.6, {scale: 1.2, ease: Power2.easeInOut});
+
+// 开始页面金牌榜按钮动画
+var rankBreath = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+
+rankBreath.to('#rank-btn', 1.2, {scale: 1.1, ease: Power2.easeInOut});
 
 // 显示排行榜
 function showRank() {
@@ -264,6 +274,7 @@ function showRule() {
         onComplete: function () {
             hideCover(); // 隐藏封面
             ruleStartBounce.play(0); // 规则页按钮弹跳
+            ruleRank.play(0);
         }
     });
     ruleShow.set('#rule-container', {display: 'block', autoAlpha: 1})
@@ -279,11 +290,22 @@ var ruleStartBounce = new TimelineMax({
 });
 ruleStartBounce.to('#rule-start', 0.6, {scale: 1.1, ease: Power2.easeInOut});
 
+// 规则页排行榜按钮动画
+var ruleRank = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true,
+    repeatDelay: 0.2
+});
+ruleRank.to('#check-rank', 0.6,  {x: -20, y: -4});
+
+
 // 隐藏规则页面
 function hideRule() {
     var ruleHide = new TimelineMax({
         onComplete: function () {
             ruleStartBounce.pause(0); // 暂停规则开始按钮弹跳动画
+            ruleRank.pause(0);
             goGamePage(); // 去生成Game照片页
         }
     });
